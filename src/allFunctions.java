@@ -1721,25 +1721,112 @@ public class allFunctions implements Serializable {
 		TextIO.putln("<body>");
 		
 		TextIO.putln("");
-		
+				
+		ArrayList<String> temp = new ArrayList<String>;
 		boolean match = false;
-		
-		for(int i = 0; i < awards.size(); ++){
+		String tempAwardName = "", tempAwardYear = "", tempAwardDesc = "", tempAwardPpl = "", tempAwardOutcome = "";
+		int counter = 0;
+		int temp;
+		String tempo = "";
+		String tempo2 = "";
+		String previous = "";
+		for(int i = 0; i < awards.size(); i++){
 			
 			//Loop to check if we have a IMDB Match of Award with our Award Bank
 			for(int j = 0; j < awardsBank.size(); j ++){
 				
+				temp = awards.get(i).indexOf(';');
+				tempo = awards.get(i).substring( temp+1, awards.get(i).length());
+				
 				//Check for a match
-				if(awards.get(i).equalsIgnoreCase(awardsBank.get(j))){
-					match = true;
+				if(tempo.substring(0,awards.get(i).indexOf(';')).equalsIgnoreCase(previous) || tempo.substring(0,awards.get(i).indexOf(';')).equalsIgnoreCase(awardsBank.get(j).getName())){
+					
+					tempo = "";		//Clearing tempo
+					
+					//Grabbing the Awards Information in temp storage. i.e Parsing the "awards" ArrayList element
+					tempAwardYear = awards.get(i).substring(0 , awards.get(i).indexOf(';'));
+					tempAwardName = awardsBank.get(j).getName();
+					
+					temp = awards.get(i).indexOf(';');			//Used to get between each semi-colons. This temp helps us keep track
+					tempo = awards.get(i).substring( temp+1, awards.get(i).length());
+					temp = awards.get(i).indexOf(';');
+					tempo = awards.get(i).substring( temp+1, tempo.length());
+					
+					tempAwardDesc = awards.get(i).substring(0 , awards.get(i).indexOf(';'));
+					
+					temp = awards.get(i).indexOf(';');
+					tempo = awards.get(i).substring( temp+1, tempo.length());
+							
+					
+					tempAwardPpl = awards.get(i).substring(0 , awards.get(i).indexOf(';'));
+				
+					//Replacing '|' with ',' in tempAwardPpl
+					for(int k = 0; k < tempAwardPpl.length(); k++){
+						
+						if(tempAwardPpl.charAt(k) == '|')
+							tempAwardPpl.charAt(k) = ',';
+							
+					}
+					
+					temp = awards.get(i).indexOf(';');
+					tempo = awards.get(i).substring( temp+1, tempo.length());
+					
+					tempAwardOutcome = tempo;
+					
+					tempo = ""; 			//Clearing Tempo
+					tempo2 = ""; 			//Clearing Tempo2
+					
+					
+					TextIO.putln("<div class="gap">");
+					
+					if(tempo.substring(0,awards.get(i).indexOf(';')).equalsIgnoreCase(previous)){
+						TextIO.putln("<!-- *****************************"+tempAwardName","+tempAwardYear+" *************************** -->");
+						TextIO.putln("<div class=\"tab\" style=\" margin-left: 10px;\">");            
+						TextIO.putln("<a href=\"http://midnightjabber.com/legend/\"><img class =\" grow \" src=\""+awardsBank.get(j).getLink()+"\" style=\"height: 50px; width: auto;\" title=\"\"></a>");
+						TextIO.putln("<div class=\"tabcontent\">");
+						TextIO.putln("<div class=\"scrollbar\" id=\"style-1\">");
+						TextIO.putln("<div class=\"force-overflow\">");
+						TextIO.putln("<font size=\"4\" color=\"#F7AD07\"><b><u>"+tempAwardName.toUpperCase()+" "+tempAwardYear+"</u></b></font>"); 
+					}
+					
+					TextIO.putln();
+					TextIO.putln("<br>");
+					
+					if(tempAwardOutcome.equalsIgnoreCase("Won"))
+						TextIO.putln("<img src=\"http://midnightjabber.com/wp-content/uploads/2014/07/Award-Won.png\" style=\"height: 12px; width: auto;\" title=\"Won!\"><font size=\"3\"color=\"white\" style=\"margin-left:5px;\"><b><u>"+tempAwardDesc+"</b></u></font>");
+					else
+						TextIO.putln("<img src=\"http://midnightjabber.com/wp-content/uploads/2014/07/Award-Lose.png" style=\"height: 12px; width: auto;\" title=\"Nominated\"><font size=\"3\"color=\"white\" style=\"margin-left:5px;\"><b><u>"+tempAwardDesc+"</b></u></font>");
+						
+					TextIO.putln("<br>");
+					TextIO.putln("<font size=\"2\" color=\"white\">"+tempAwardPpl+"</font>");
+					
+					TextIO.putln("<br>");
+					TextIO.putln("<br>");
+					
+					 <img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Won.png" style="height: 12px; width: auto;" title="Won!"><font size="3"color="white" style="margin-left:5px;"><b><u>Best Special Visual Effects</b></u></font>
+					<br>
+					<font size="2" color="white">Stan Winston,Dennis Muren, Gene Warren Jr., Robert Skotak  </font>
+
+					<br>
+					<br>
+					 <img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Lose.png" style="height: 12px; width: auto;" title="Nominated"><font size="3"color="white" style="margin-left:5px;"><b><u>Best Production Design</b></u></font>
+					<br>
+					<font size="2" color="white">Joseph C. Nemec III </font>
+
+					</div>
+					</div>
+					</div>
+					</div>
+					
 					
 					
 				}
 			}
 		}
 	}
+	
+	// awardYear
 		
-		TextIO.putln("<div class="gap">");
 		TextIO.putln("");
 		TextIO.putln("");
 		TextIO.putln("");
@@ -1756,39 +1843,7 @@ public class allFunctions implements Serializable {
 		TextIO.putln("");
 		TextIO.putln("");
 		
-		 
-		 
-		       
-
-		<!-- *****************************BAFTA AWARD, 1992 *************************** -->
-		<div class="tab" style=" margin-left: 10px;">            
-		<a href="http://midnightjabber.com/legend-awards/"><img class =" grow " src="http://midnightjabber.com/wp-content/uploads/2014/07/BAFTA-Award.png" style="height: 50px; width: auto;" title=""></a>
-		<div class="tabcontent">
-		<div class="scrollbar" id="style-1">
-		<div class="force-overflow">
-		<font size="4" color="#F7AD07"><b><u>BAFTA AWARDS 1992</u></b></font> 
-
-		<br>
-		 <img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Won.png" style="height: 12px; width: auto;" title="Won!"><font size="3"color="white" style="margin-left:5px;"><b><u>Best Sound</b></u></font>
-		<br>
-		<font size="2" color="white">Lee Orloff, Tom Johnson, Gary Rydstrom, Gary Summers </font>
-
-		<br>
-		<br>
-		 <img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Won.png" style="height: 12px; width: auto;" title="Won!"><font size="3"color="white" style="margin-left:5px;"><b><u>Best Special Visual Effects</b></u></font>
-		<br>
-		<font size="2" color="white">Stan Winston,Dennis Muren, Gene Warren Jr., Robert Skotak  </font>
-
-		<br>
-		<br>
-		 <img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Lose.png" style="height: 12px; width: auto;" title="Nominated"><font size="3"color="white" style="margin-left:5px;"><b><u>Best Production Design</b></u></font>
-		<br>
-		<font size="2" color="white">Joseph C. Nemec III </font>
-
-		</div>
-		</div>
-		</div>
-		</div>
+		
 
 		<!-- *****************************ACADEMY AWARD, 1992 *************************** -->
 		<div class="tab" style=" margin-left: 35px;">            
