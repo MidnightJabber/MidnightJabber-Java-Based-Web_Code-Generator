@@ -1543,4 +1543,530 @@ public class allFunctions implements Serializable {
 
 	}
 
+	public void generateAwardCode(){
+		
+		
+		String fileName = "movieAwardCode.txt";
+		TextIO.writeFile(fileName);
+		
+		TextIO.putln("<font face=\"Yanone Kaffeesatz Regular\" size=\"6\">Awards & Nominations:</font>");
+		TextIO.putln("<br>");
+
+		TextIO.putln();
+		
+		TextIO.putln("<!DOCTYPE html>");
+		TextIO.putln("<html>");
+		TextIO.putln("<head>");
+		TextIO.putln("<style>");
+		
+		TextIO.putln();
+		
+		TextIO.putln("/* http://ianlunn.github.io/Hover/# ( for hover effects by Ian Lunn) */");
+		TextIO.putln("/* Hover effects are on his Github. Each effect has a class in the hover.css file */");
+		TextIO.putln("/* GITHUB LINK: https://github.com/IanLunn/Hover */");
+
+
+		TextIO.putln("/* GROW CODE */");
+		TextIO.putln(".grow {");
+		TextIO.putln("display: inline-block;");
+		TextIO.putln("-webkit-transition-duration: 0.1s;");
+		TextIO.putln("transition-duration: 0.1s;");
+		TextIO.putln("-webkit-transition-property: transform;");
+		TextIO.putln("transition-property: transform;");
+		TextIO.putln("-webkit-transform: translateZ(0);");
+		TextIO.putln("transform: translateZ(0);");
+		TextIO.putln("}");
+		
+		TextIO.putln("");
+		
+		TextIO.putln("/* GROW HOVER CODE */");
+		TextIO.putln(".grow:hover, .grow:focus, .grow:active");
+		TextIO.putln("{");
+		TextIO.putln("-webkit-transform:  translateZ(0) scale(1.1);");
+		TextIO.putln("transform: translateZ(0) scale(1.1);"); 
+		TextIO.putln("}"); 
+		
+		TextIO.putln("");
+		
+		TextIO.putln("/** Description: Creates Text Box on Hover. The Decoration/Colors can be edited");
+		TextIO.putln("* Author: Code taken online (unknown)");
+		TextIO.putln("*/");
+		
+		TextIO.putln(".tab");
+		TextIO.putln("{");
+		TextIO.putln("float: left;");
+		TextIO.putln("}");
+		
+		TextIO.putln("");
+		
+		TextIO.putln(".tabcontent{");		
+		TextIO.putln("margin-top:1px;");
+		TextIO.putln("margin-left: -10px;");
+		TextIO.putln("position: absolute;");
+		TextIO.putln("padding:0px 0 0 10px;");
+		TextIO.putln("background: rgba(0,0,0,0.9);");
+		TextIO.putln("/* Safari 4-5, Chrome 1-9 */");
+		TextIO.putln("background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#1947A4), to(#4A7EBD));");
+		TextIO.putln("/* Safari 5.1, Chrome 10+ */");
+		TextIO.putln("background: -webkit-linear-gradient(top, #1947A4, #4A7EBD);");
+		TextIO.putln("/* Firefox 3.6+ */");
+		TextIO.putln("background: -moz-linear-gradient(top, #020202, #4A4A4A);");
+		TextIO.putln("/* IE 10 */");
+		TextIO.putln("background: -ms-linear-gradient(top, #020202, #4A4A4A);");
+		TextIO.putln("/* Opera 11.10+ */");
+		TextIO.putln("background: -o-linear-gradient(top, #020202, #4A4A4A);");
+		TextIO.putln("/*  border:1px solid #000; */");
+		TextIO.putln("border-radius: 12px ;");
+		TextIO.putln("height:150px;");
+		TextIO.putln("width: 250px;");
+		TextIO.putln("display:none;");
+		TextIO.putln("transition: all 1.2s;");
+		TextIO.putln("box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);");
+		TextIO.putln("}");
+		
+		TextIO.putln("");
+		
+		TextIO.putln(".tab:hover > .tabcontent");
+		TextIO.putln("{");
+		TextIO.putln("display: block;");
+		TextIO.putln("}");
+		
+		TextIO.putln("");
+		
+		TextIO.putln("/** Description: Gap Animation code between rows of awards");
+		TextIO.putln("*Functionality/Usage: <div class=\"gap\"> (includes a row of awards) </div>");
+		TextIO.putln("* Authors: Vishrut,Sukrit (www.midnightjabber.com)");
+		TextIO.putln("*/");
+		
+		TextIO.putln("");
+		
+		TextIO.putln(".gap:hover");
+		TextIO.putln("");
+		TextIO.putln("margin-bottom:180px;");
+		TextIO.putln("transition: all 0.5s;");
+		TextIO.putln("}");
+		
+		TextIO.putln("");
+		
+		TextIO.putln(".lastgap:hover");
+		TextIO.putln("{");
+		TextIO.putln("margin-bottom:205px;");
+		TextIO.putln("transition: all 0.5s;");
+		TextIO.putln("}");
+	
+		TextIO.putln("");
+		
+		TextIO.putln("/* For Testing Purposes */");
+		TextIO.putln(".solid_border {");
+		TextIO.putln("border-style: dashed;");
+		TextIO.putln("}");
+		
+		TextIO.putln("");
+		
+		TextIO.putln(".scrollbar");
+		TextIO.putln("{");
+		TextIO.putln("margin-top:5px;");
+		TextIO.putln("height: 140px;");
+		TextIO.putln("width: 249px;");
+		TextIO.putln("overflow-y: auto;");
+		TextIO.putln("}");
+	
+		TextIO.putln("");
+		
+		TextIO.putln(".force-overflow");
+		TextIO.putln("{");
+		TextIO.putln("overflow-y: auto;");
+		TextIO.putln("}");
+	
+		TextIO.putln("");
+	
+		TextIO.putln("/*");
+		TextIO.putln("*  STYLE 1");
+		TextIO.putln("*/");
+		
+		TextIO.putln();
+		TextIO.putln("#style-1::-webkit-scrollbar-track");
+		TextIO.putln("{");
+		TextIO.putln("-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);");
+		TextIO.putln("border-radius: 12px;");
+		TextIO.putln("background: -webkit-linear-gradient(top, #1947A4, #4A7EBD);");
+		TextIO.putln("}");
+	
+		TextIO.putln("");
+		
+		TextIO.putln("#style-1::-webkit-scrollbar");
+		TextIO.putln("{");
+		TextIO.putln("border-radius: 12px;");
+		TextIO.putln("width: 8px;");
+		TextIO.putln("}");
+		
+		TextIO.putln("");
+	
+		TextIO.putln("#style-1::-webkit-scrollbar-thumb");
+		TextIO.putln("{");
+		TextIO.putln("border-radius: 12px;");
+		TextIO.putln("-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.5);");
+		TextIO.putln("background-color: #555;");
+		TextIO.putln("}");
+		
+		TextIO.putln("");
+		
+		TextIO.putln("</style>");
+		TextIO.putln("</head>");
+		
+		TextIO.putln("");
+		
+		/*-----------------------------------------------------BODY TIME----------------------------------------------------*/
+		//Now we are in the Body guys. Time to own this logic!
+		TextIO.putln("<body>");
+		
+		TextIO.putln("");
+		
+		boolean match = false;
+		
+		for(int i = 0; i < awards.size(); ++){
+			
+			//Loop to check if we have a IMDB Match of Award with our Award Bank
+			for(int j = 0; j < awardsBank.size(); j ++){
+				
+				//Check for a match
+				if(awards.get(i).equalsIgnoreCase(awardsBank.get(j))){
+					match = true;
+					
+					
+				}
+			}
+		}
+	}
+		
+		TextIO.putln("<div class="gap">");
+		TextIO.putln("");
+		TextIO.putln("");
+		TextIO.putln("");
+		TextIO.putln("");
+		TextIO.putln("");
+		TextIO.putln("");
+		TextIO.putln("");
+		TextIO.putln("");
+		TextIO.putln("");
+		TextIO.putln("");
+		TextIO.putln("");
+		TextIO.putln("");
+		TextIO.putln("");
+		TextIO.putln("");
+		TextIO.putln("");
+		
+		 
+		 
+		       
+
+		<!-- *****************************BAFTA AWARD, 1992 *************************** -->
+		<div class="tab" style=" margin-left: 10px;">            
+		<a href="http://midnightjabber.com/legend-awards/"><img class =" grow " src="http://midnightjabber.com/wp-content/uploads/2014/07/BAFTA-Award.png" style="height: 50px; width: auto;" title=""></a>
+		<div class="tabcontent">
+		<div class="scrollbar" id="style-1">
+		<div class="force-overflow">
+		<font size="4" color="#F7AD07"><b><u>BAFTA AWARDS 1992</u></b></font> 
+
+		<br>
+		 <img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Won.png" style="height: 12px; width: auto;" title="Won!"><font size="3"color="white" style="margin-left:5px;"><b><u>Best Sound</b></u></font>
+		<br>
+		<font size="2" color="white">Lee Orloff, Tom Johnson, Gary Rydstrom, Gary Summers </font>
+
+		<br>
+		<br>
+		 <img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Won.png" style="height: 12px; width: auto;" title="Won!"><font size="3"color="white" style="margin-left:5px;"><b><u>Best Special Visual Effects</b></u></font>
+		<br>
+		<font size="2" color="white">Stan Winston,Dennis Muren, Gene Warren Jr., Robert Skotak  </font>
+
+		<br>
+		<br>
+		 <img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Lose.png" style="height: 12px; width: auto;" title="Nominated"><font size="3"color="white" style="margin-left:5px;"><b><u>Best Production Design</b></u></font>
+		<br>
+		<font size="2" color="white">Joseph C. Nemec III </font>
+
+		</div>
+		</div>
+		</div>
+		</div>
+
+		<!-- *****************************ACADEMY AWARD, 1992 *************************** -->
+		<div class="tab" style=" margin-left: 35px;">            
+		<a href="http://midnightjabber.com/legend-awards/"><img class ="grow " src="http://midnightjabber.com/wp-content/uploads/2014/07/Oscar-Award.png" style="height: 50px; width: auto;" title=""></a>
+		<div class="tabcontent">
+		<div class="scrollbar" id="style-1">
+		<div class="force-overflow">
+		<font size="4" color="#F7AD07"><b><u>ACADEMY AWARDS 1992</u></b></font> 
+
+		<br>
+		 <img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Won.png" style="height: 12px; width: auto;" title="Won!"><font size="3"color="white" style="margin-left:5px;"><b><u>Best Sound</b></u></font>
+		<br>
+		<font size="2" color="white">Lee Orloff, Tom Johnson, Gary Rydstrom, Gary Summers </font>
+
+		<br>
+		<br>
+		 <img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Won.png" style="height: 12px; width: auto;" title="Won!"><font size="3"color="white" style="margin-left:5px;"><b><u>Best Effects, Sound Effects Editing</b></u></font>
+		<br>
+		<font size="2" color="white">Gary Rydstrom, Gloria S. Borders   </font>
+
+		<br>
+		<br>
+		 <img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Won.png" style="height: 12px; width: auto;" title="Won!"><font size="3"color="white" style="margin-left:5px;"><b><u>Best Effects, Visual Effects</b></u></font>
+		<br>
+		<font size="2" color="white">Dennis Muren, Stan Winston, Gene Warren Jr., Robert Skotak </font>
+
+		<br>
+		<br>
+		 <img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Won.png" style="height: 12px; width: auto;" title="Won!"><font size="3"color="white" style="margin-left:5px;"><b><u>Best Makeup</b></u></font>
+		<br>
+		<font size="2" color="white">Stan Winston, Jeff Dawn  </font>
+
+		<br>
+		<br>
+		 <img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Lose.png" style="height: 12px; width: auto;" title="Nominated"><font size="3"color="white" style="margin-left:5px;"><b><u>Best Cinematography</b></u></font>
+		<br>
+		<font size="2" color="white">Adam Greenberg </font>
+
+		<br>
+		<br>
+		 <img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Lose.png" style="height: 12px; width: auto;" title="Nominated"><font size="3"color="white" style="margin-left:5px;"><b><u>Best Film Editing</b></u></font>
+		<br>
+		<font size="2" color="white">Conrad Buff IV, Mark Goldblatt, Richard A. Harris  </font>
+		</div>
+		</div>
+		</div>
+		</div>
+
+		<!-- *****************************Academy of Science Fiction, Fantasy & Horror Films, USA, 1992 ********************* -->
+		<div class="tab" style=" margin-left: 50px;">            
+		<a href="http://midnightjabber.com/legend-awards/"><img class ="grow " src="http://midnightjabber.com/wp-content/uploads/2014/07/Saturn-Award.png" style="height: 50px; width: auto;" title=""></a>
+		<div class="tabcontent"> 
+		<div class="scrollbar" id="style-1">
+		<div class="force-overflow">
+
+		<font size="4" color="#F7AD07"><b><u>SATURN AWARDS, USA 1992</u></b></font> 
+
+		<br>
+		 <img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Won.png" style="height: 12px; width: auto;" title="Won!"><font size="3"color="white" style="margin-left:5px;"><b><u>Best Science Fiction Film</b></u></font>
+
+
+		<br>
+		<br>
+		 <img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Won.png" style="height: 12px; width: auto;" title="Won!"><font size="3"color="white" style="margin-left:5px;"><b><u>Best Actress</b></u></font>
+		<br>
+		<font size="2" color="white">Linda Hamilton  </font>
+
+		<br>
+		<br>
+		 <img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Won.png" style="height: 12px; width: auto;" title="Won!"><font size="3"color="white" style="margin-left:5px;"><b><u>Best Performance by a Younger Actor</b></u></font>
+		<br>
+		<font size="2" color="white">Edward Furlong  </font>
+
+		<br>
+		<br>
+		 <img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Won.png" style="height: 12px; width: auto;" title="Won!"><font size="3"color="white" style="margin-left:5px;"><b><u>Best Director</b></u></font>
+		<br>
+		<font size="2" color="white">James Cameron  </font>
+
+		<br>
+		<br>
+		 <img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Won.png" style="height: 12px; width: auto;" title="Won!"><font size="3"color="white" style="margin-left:5px;"><b><u>Best Special Effectsr</b></u></font>
+		<br>
+		<font size="2" color="white">Stan Winston, Industrial Light & Magic (ILM), 4-Ward Productions   </font>
+
+		<br>
+		<br>
+		 <img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Lose.png" style="height: 12px; width: auto;" title="Nominated"><font size="3"color="white" style="margin-left:5px;"><b><u>Best Cinematography</b></u></font>
+		<br>
+		<font size="2" color="white">Adam Greenberg </font>
+
+		<br>
+		<br>
+		 <img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Lose.png" style="height: 12px; width: auto;" title="Nominated"><font size="3"color="white" style="margin-left:5px;"><b><u>Best Actor</b></u></font>
+		<br>
+		<font size="2" color="white">Arnold Schwarzenegger Robert Patrick   </font>
+
+		<br>
+		<br>
+		 <img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Lose.png" style="height: 12px; width: auto;" title="Nominated"><font size="3"color="white" style="margin-left:5px;"><b><u>Best Supporting Actor</b></u></font>
+		<br>
+		<font size="2" color="white">Robert Patrick   </font>
+
+		<br>
+		<br>
+		 <img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Lose.png" style="height: 12px; width: auto;" title="Nominated"><font size="3"color="white" style="margin-left:5px;"><b><u>Best Writing</b></u></font>
+		<br>
+		<font size="2" color="white">James Cameron, William Wisher Jr.    </font>
+
+		<br>
+		<br>
+		 <img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Lose.png" style="height: 12px; width: auto;" title="Nominated"><font size="3"color="white" style="margin-left:5px;"><b><u>Best Makeup</b></u></font>
+		<br>
+		<font size="2" color="white">Stan Winston, Jeff Dawn    </font>
+
+		</div>
+		</div>
+		</div>
+		</div>
+
+		<div class="tab" style=" margin-left: 60px;">            
+		<a href="http://midnightjabber.com/legend-awards/"><img class ="grow " src="http://midnightjabber.com/wp-content/uploads/2014/07/Golden_Globe_Trophy-Award.png" style="height: 50px; width: auto;"></a>
+		<div class="tabcontent">
+		<div class="scrollbar" id="style-1">
+		<div class="force-overflow">
+		<font size="2" color="#F7AD07"><b><u>BAFTA AWARDS 2013 4</u></b></font> 
+		<br>
+		<font size="1"color="white">(AWARD TITLE/DESCRIPTION)</font>
+		<br>
+		<font size="1" color="white">(AWARD WINNER)</font>
+		</div>
+		</div>
+		</div>
+		</div>
+
+
+
+		</div>
+
+		<br><br><br>
+
+		<div class="gap">       
+
+		<div class="tab" style=" margin-left: 10px;">            
+		<a href="http://midnightjabber.com/legend-awards/"><img class =" grow " src="http://midnightjabber.com/wp-content/uploads/2014/07/BAFTA-Award.png" style="height: 50px; width: auto;"></a>
+		<div class="tabcontent">
+		<div class="scrollbar" id="style-1">
+		<div class="force-overflow">
+		<font size="2" color="#F7AD07"><b><u>BAFTA AWARDS 2013 1</u></b></font> 
+		<br>
+		<font size="1"color="white">(AWARD TITLE/DESCRIPTION)</font>
+		<br>
+		<font size="1" color="white">(AWARD WINNER)</font>
+		</div>
+		</div>
+		</div>
+		</div>
+
+		<div class="tab" style=" margin-left: 35px;">            
+		<a href="http://midnightjabber.com/legend-awards/"><img class ="grow " src="http://midnightjabber.com/wp-content/uploads/2014/07/Oscar-Award.png" style="height: 50px; width: auto;"></a>
+		<div class="tabcontent">
+		<div class="scrollbar" id="style-1">
+		<div class="force-overflow">
+		<font size="2" color="#F7AD07"><b><u>BAFTA AWARDS 2013 2</u></b></font> 
+		<br>
+		<font size="1"color="white">(AWARD TITLE/DESCRIPTION)</font>
+		<br>
+		<font size="1" color="white">(AWARD WINNER)</font>
+		</div>
+		</div>
+		</div>
+		</div>
+
+		<div class="tab" style=" margin-left: 50px;">            
+		<a href="http://midnightjabber.com/legend-awards/"><img class ="grow " src="http://midnightjabber.com/wp-content/uploads/2014/07/Palme-DOr-Award.png" style="height: 50px; width: auto;"></a>
+		<div class="tabcontent">
+		<div class="scrollbar" id="style-1">
+		<div class="force-overflow">
+		<font size="2" color="#F7AD07"><b><u>BAFTA AWARDS 2013 3</u></b></font> 
+		<br>
+		<font size="1"color="white">(AWARD TITLE/DESCRIPTION)</font>
+		<br>
+		<font size="1" color="white">(AWARD WINNER)</font>
+		</div>
+		</div>
+		</div>
+		</div>
+
+		<div class="tab" style=" margin-left: 60px;">            
+		<a href="http://midnightjabber.com/legend-awards/"><img class ="grow " src="http://midnightjabber.com/wp-content/uploads/2014/07/Golden_Globe_Trophy-Award.png" style="height: 50px; width: auto;"></a>
+		<div class="tabcontent">
+		<div class="scrollbar" id="style-1">
+		<div class="force-overflow">
+		<font size="2" color="#F7AD07"><b><u>BAFTA AWARDS 2013 4</u></b></font> 
+		<br>
+		<font size="1"color="white">(AWARD TITLE/DESCRIPTION)</font>
+		<br>
+		<font size="1" color="white">(AWARD WINNER)</font>
+		</div>
+		</div>
+		</div>
+		</div>
+
+		</div>
+
+		<br><br><br>
+
+		<div class="lastgap">       
+
+		<div class="tab" style=" margin-left: 10px;">            
+		<a href="http://midnightjabber.com/legend-awards/"><img class =" grow " src="http://midnightjabber.com/wp-content/uploads/2014/07/BAFTA-Award.png" style="height: 50px; width: auto;"></a>
+		<div class="tabcontent">
+		<div class="scrollbar" id="style-1">
+		<div class="force-overflow">
+		<font size="2" color="#F7AD07"><b><u>BAFTA AWARDS 2013 1</u></b></font> 
+		<br>
+		<font size="1"color="white">(AWARD TITLE/DESCRIPTION)</font>
+		<br>
+		<font size="1" color="white">(AWARD WINNER)</font>
+		</div>
+		</div>
+		</div>
+		</div>
+
+		<div class="tab" style=" margin-left: 35px;">            
+		<a href="http://midnightjabber.com/legend-awards/"><img class ="grow " src="http://midnightjabber.com/wp-content/uploads/2014/07/Oscar-Award.png" style="height: 50px; width: auto;"></a>
+		<div class="tabcontent">
+		<div class="scrollbar" id="style-1">
+		<div class="force-overflow">
+		<font size="2" color="#F7AD07"><b><u>BAFTA AWARDS 2013 2</u></b></font> 
+		<br>
+		<font size="1"color="white">(AWARD TITLE/DESCRIPTION)</font>
+		<br>
+		<font size="1" color="white">(AWARD WINNER)</font>
+		</div>
+		</div>
+		</div>
+		</div>
+
+		<div class="tab" style=" margin-left: 50px;">            
+		<a href="http://midnightjabber.com/legend-awards/"><img class ="grow " src="http://midnightjabber.com/wp-content/uploads/2014/07/Palme-DOr-Award.png" style="height: 50px; width: auto;"></a>
+		<div class="tabcontent">
+		<div class="scrollbar" id="style-1">
+		<div class="force-overflow">
+		<font size="2" color="#F7AD07"><b><u>BAFTA AWARDS 2013 3</u></b></font> 
+		<br>
+		<font size="1"color="white">(AWARD TITLE/DESCRIPTION)</font>
+		<br>
+		<font size="1" color="white">(AWARD WINNER)</font>
+		</div>
+		</div>
+		</div>
+		</div>
+
+		<div class="tab" style=" margin-left: 60px;">            
+		<a href="http://midnightjabber.com/legend-awards/"><img class ="grow " src="http://midnightjabber.com/wp-content/uploads/2014/07/Golden_Globe_Trophy-Award.png" style="height: 50px; width: auto;"></a>
+		<div class="tabcontent">
+		<div class="scrollbar" id="style-1">
+		<div class="force-overflow">
+		<font size="2" color="#F7AD07"><b><u>BAFTA AWARDS 2013 4</u></b></font> 
+		<br>
+		<font size="1"color="white">(AWARD TITLE/DESCRIPTION)</font>
+		<br>
+		<font size="1" color="white">(AWARD WINNER)</font>
+		</div>
+		</div>
+		</div>
+		</div>
+
+
+
+		</div>
+
+		</body> 
+		</html> 
+
+		
+	}
+	
 }
+
