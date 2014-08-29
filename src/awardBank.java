@@ -2,7 +2,7 @@ import java.io.Serializable;
 
 /**
  * Desc: Class Used for Award Object and its attributes. Each of these objects gets further 
- * 		 stored in an ArrayList(Function used for that: allFuncrtions.java/updateAwardBank()).
+ * 		 stored in an ArrayList(Fucntion used for that: allFuncrtions.java/updateAwardBank()).
  * 		 Attributes include:
  * 		 1) Award Name
  * 		 2) Award Image URL 
