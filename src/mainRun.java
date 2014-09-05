@@ -8,40 +8,41 @@ public class mainRun
 	public static void displayMenu()
 	{
 		System.out.println();
-		System.out.println("                                     <Movie Functions>");
-		System.out.println("1. Add a Movie");
-		System.out.println("2. Find a Movie");
-		System.out.println("3. Edit a Movie");
-		System.out.println("4. Delete a Movie");
+		System.out.println("<Movie Functions>			<File Functions>				<Awards Functions>");
+		System.out.println();
+		System.out.println("1. Add a Movie				5. Open file					13. Retrieve Awards List");
+		System.out.println("2. Find a Movie				6. Save Lists					14. Display Retrieved Awards List");
+		System.out.println("3. Edit a Movie				7. Display Entire Movie Lists					");
+		System.out.println("4. Delete a Movie									15. Add Award to Award Bank");
+		System.out.println("					8. Sort the Lists (By Release Dates)		16. Edit Award in Award Bank");
+		System.out.println("					9. Save Code as TXT / Generate Code		17. Delete Award From Award Bank");
+		System.out.println("											18. Display Award Bank");
+		System.out.println("					10. Sort Alphabeticaly				19. Generate Awards Code (of last retrieved awards)");
+		System.out.println("					11. Generate Alphabetical Code			");
+		System.out.println("					12. Do all the saving and generating	");
+			
+		
+		System.out.println("_____________________________________________________________________________________________________________________________________________");
+		System.out.println("");
+		System.out.println("<Author Functions>");
+		System.out.println("");
+		System.out.println("20. Find An Author");
+		System.out.println("21. Find An Authors Works");
+		System.out.println("");
+		System.out.println("22. Generate Authors Code ");
+		System.out.println("");
+		System.out.println("23. Add New Auhtor To Author Bank");
+		System.out.println("24. Edit Author Bank");
+		System.out.println("25. Delete Author (from Bank)");
+		System.out.println("26. Display Author Bank");
+		
+		
+		
 
+		
 		System.out.println("\n\n");
-
-		System.out.println("                                     <File Functions>");
-		System.out.println("5. Open file");
-		System.out.println("6. Save Lists");
-		System.out.println("7. Display Entire Movie Lists");
-		System.out.println();
-		System.out.println("8. Sort the Lists (By Release Dates)");
-		System.out.println("9. Save Code as TXT / Generate Code");
-		System.out.println();
-		System.out.println("10. Sort Alphabeticaly");
-		System.out.println("11. Generate Alphabetical Code");
-		System.out.println();
-		System.out.println("12. Do all the saving and generating.");
-
-		System.out.println("\n\n");
-
-		System.out.println("                                     <Awards Functions>");
-		System.out.println("13. Retrieve Awards List");
-		System.out.println("14. Display Retrieved Awards List");
-		System.out.println();
-		System.out.println("15. Add Award to Award Bank");
-		System.out.println("16. Delete Award from Award Bank");
-		System.out.println("17. Display Award Bank");
-
 		System.out.println("\n0. Quit\n\n");
 	}
-
 
 	public static void main(String args[]) throws IOException,
 			ClassNotFoundException, InterruptedException
@@ -165,46 +166,57 @@ public class mainRun
 					break;
 
 				case 16:
+					obj.editAwardBank();
+					obj.saveFile();
+					break;	
+					
+				case 17:
 					obj.deleteFromAwardBank();
 					obj.saveFile();
 					break;
 
-				case 17:
+				case 18:
 					obj.displayAwardBankList();
 					break;
 
-				case 18:
+				case 19: 
+					obj.generateAwardCode();
+					break;	
+					
+				case 20:
 					obj.findAnAuthor();
 					break;
 
-				case 19:
+				case 21:
 					obj.findAnAuthorsWorks();
 					break;
 
-				case 20:
-					obj.addNewAuthor();
-					obj.saveFile();
-					break;
-
-				case 21:
+				case 22:
 					obj.generateAuthorsCode();
 					obj.saveFile();
 					break;
 
-				case 22:
+				case 23:
+					obj.addNewAuthor();
+					obj.saveFile();
+					break;	
+					
+				case 24:
+					obj.editAuthorBank();
+					obj.saveFile();
+					break;
+					
+				case 25:
 					obj.deleteAuthor();
 					obj.saveFile();
 					break;
 
-				case 23:
+				case 26:
 					obj.displayAuthorBank();
 					break;
 
-				case 24:
-					obj.generateAwardCode();
-					break;
+				
 
-					
 				default:
 					System.out.println("Wrong Option");
 					break;
@@ -214,7 +226,6 @@ public class mainRun
 		while (n != 0);
 
 	}
-
 
 	private static void exit(int i)
 	{

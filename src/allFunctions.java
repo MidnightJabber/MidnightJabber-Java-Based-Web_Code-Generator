@@ -30,7 +30,10 @@ public class allFunctions implements Serializable
 	ArrayList<String> authorsBank = new ArrayList<String>();
 	ArrayList<String> authorItem = new ArrayList<String>();
 
-
+	
+	//Random Variables
+	String movieWhosAwardsWereJustGenerated;
+	
 	public void saveFile() throws IOException
 	{
 
@@ -50,7 +53,6 @@ public class allFunctions implements Serializable
 		oos.close();
 
 	}
-
 
 	public void deleteMovie() throws IOException
 	{
@@ -140,7 +142,6 @@ public class allFunctions implements Serializable
 
 	}
 
-
 	public ArrayList<Integer> findAMovie() throws IOException
 	{
 		System.out.println("                                      Searching For a Movie                                      ");
@@ -202,7 +203,6 @@ public class allFunctions implements Serializable
 		}
 
 	}
-
 
 	public void editMovie() throws IOException
 	{
@@ -331,7 +331,6 @@ public class allFunctions implements Serializable
 
 	}
 
-
 	@SuppressWarnings("unchecked")
 	public void openFile() throws IOException, ClassNotFoundException
 	{
@@ -356,7 +355,6 @@ public class allFunctions implements Serializable
 		fileIn.close();
 
 	}
-
 
 	public void getMovie() throws IOException
 	{
@@ -408,7 +406,6 @@ public class allFunctions implements Serializable
 
 	}
 
-
 	public void sortListsByReleaseDates()
 	{
 		int i, j, tmp;
@@ -448,7 +445,6 @@ public class allFunctions implements Serializable
 			}
 		}
 	}
-
 
 	public void sortListsAlphabetically()
 	{
@@ -490,7 +486,6 @@ public class allFunctions implements Serializable
 		}
 	}
 
-
 	public int findLargest(ArrayList<String> arr)
 	{
 		int len, i, largest;
@@ -509,7 +504,6 @@ public class allFunctions implements Serializable
 		return largest;
 
 	}
-
 
 	public void displayLists() throws IOException
 	{
@@ -571,7 +565,6 @@ public class allFunctions implements Serializable
 		}
 
 	}
-
 
 	public void saveCodetoFile() throws IOException
 
@@ -874,7 +867,6 @@ public class allFunctions implements Serializable
 
 	}
 
-
 	public void saveAlphabeticalCodetoFile() throws IOException
 	{
 		String code = "";
@@ -1175,7 +1167,6 @@ public class allFunctions implements Serializable
 
 	}
 
-
 	public void retrieveAwards() throws IOException
 	{
 		awards.clear();
@@ -1236,6 +1227,23 @@ public class allFunctions implements Serializable
 			i = idx.get(n - 1);
 		}
 
+		movieWhosAwardsWereJustGenerated=movieNames.get(i);
+		
+		String arr[]=movieWhosAwardsWereJustGenerated.split(" ");
+		
+		for(int x=0;x<(arr.length-1);x++)
+		{
+			if(x==0)
+			{
+				movieWhosAwardsWereJustGenerated=arr[x];
+			}
+			
+			else
+			{
+				movieWhosAwardsWereJustGenerated=movieWhosAwardsWereJustGenerated+arr[x];
+			}
+		}
+		
 		System.out.println("\n\n ------------Movie Selected to generate Awards For------------");
 		System.out.println("\n 1. Movie Name: " + movieNames.get(i));
 		System.out.println("\n 2. Release Date: " + releaseDates.get(i));
@@ -1311,12 +1319,20 @@ public class allFunctions implements Serializable
 
 							if(k == 0)
 							{
-								awardPerson = individualPerson.text();
+								if(!(individualPerson.text().equals("More")))
+								{
+									awardPerson = individualPerson.text();
+								}
+								
 							}
 
 							else
 							{
-								awardPerson = awardPerson + "|" + individualPerson.text();
+								if(!(individualPerson.text().equals("More")))
+								{
+									awardPerson = awardPerson + "|" + individualPerson.text();
+								}
+								
 							}
 						}
 
@@ -1343,7 +1359,6 @@ public class allFunctions implements Serializable
 
 	}
 
-
 	public void displayAwardsList() throws IOException
 	{
 		int i;
@@ -1355,7 +1370,7 @@ public class allFunctions implements Serializable
 		if(awards.isEmpty() != true)
 		{
 			System.out.println("\n\n------------------Awards List------------------\n\n");
-			System.out.println("\nNo of awards: "+awards.size());
+			System.out.println("\nNo of awards: " + awards.size());
 
 			for(i = 0; i < awards.size(); i++)
 			{
@@ -1377,7 +1392,6 @@ public class allFunctions implements Serializable
 		}
 
 	}
-
 
 	public void updateAwardBank() throws IOException
 	{
@@ -1416,7 +1430,6 @@ public class allFunctions implements Serializable
 				return;
 		}
 	}
-
 
 	public void deleteFromAwardBank() throws IOException
 	{
@@ -1550,6 +1563,146 @@ public class allFunctions implements Serializable
 
 	}
 
+	public void editAwardBank()throws IOException
+	{
+		/**
+		 * Desc: Used to delete an Award to Midnightjabber Database (Local to
+		 * the .java program not a SQL DAtabase) It also adds the object(award)
+		 * to the Array List Bank. Note: The Award Name that you enter should be
+		 * exactly how IMDB Awards are named on their site
+		 */
+
+		InputStreamReader rd = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(rd);
+
+		System.out.println("\n\n\n");
+
+		int choice; // 1 to choose the number and 2 to search
+		int number; // Display order number of awards
+		char answer, ch; // Yes and No Answer
+		String temporaryInput;//Edit nmae and link
+		
+		System.out.println("Instuctions to Delete:");
+		System.out.println("Press 1 to Choose from the List/Award Bank");
+		System.out.println("Press 2 to Search by Name");
+		choice = Integer.parseInt(br.readLine());
+
+		if(choice == 1)
+		{
+			for(int i = 0; i < awardsBank.size(); i++)
+			{
+				System.out.println((i + 1) + ") " + awardsBank.get(i).getName());
+			}
+
+			System.out.print("\nChoose the Number to Delete: ");
+			number = Integer.parseInt(br.readLine());
+
+			System.out.println("Are you sure you want to delete " + awardsBank.get(number - 1)
+																				.getName() + "? (y/n)");
+			answer = (char) br.read();
+			if(answer == 'y')
+			{
+				awardsBank.remove(number - 1);
+				System.out.println("\nAward has been successfully deleted from the Bank!");
+			}
+			else
+			{
+				System.out.println("\nAward has NOT been deleted from the Bank!");
+			}
+
+		}
+
+		else if(choice == 2)
+		{
+			ArrayList<Integer> idx = new ArrayList<Integer>();
+
+			idx = findAnAward();
+
+			String temp;
+			int terminal, i, n, m = 0;
+
+			if(idx.size() == 1)
+			{
+				i = idx.get(0);
+			}
+
+			else if(idx.size() == 0)
+			{
+				char tmp;
+				System.out.println("No Award Found of that Name. Do you want to try again? (y/n)");
+				tmp = (char) br.read();
+				if(tmp == 'y')
+				{
+					deleteFromAwardBank();
+					return;
+				}
+				else
+				{
+					return;
+				}
+
+			}
+
+			else
+			{
+				do
+				{
+					if(m == 1)
+					{
+						System.out.println("\nInavalid Choice, Enter Again: \n");
+					}
+
+					System.out.println("Enter a choice: \n");
+					n = Integer.parseInt(br.readLine());
+					m = 1;
+				}
+				while (n > idx.size() || n < 0);
+
+				i = idx.get(n - 1);
+			}
+
+			System.out.println("\n\n ------------Award Selected to Be Edited------------");
+			System.out.println("\n 1. Award Name: " + awardsBank.get(i)
+																.getName());
+
+			System.out.println("\nAre you sure you want to delete this award? (y/n)");
+			temp = br.readLine();
+
+			if(temp.equalsIgnoreCase("y"))
+			{
+				System.out.println("\nEnter New Name: ");
+				temporaryInput=br.readLine();
+				awardsBank.get(i).setName(temporaryInput);
+				
+				System.out.println("\nEnter New Image Url: ");
+				temporaryInput=br.readLine();
+				awardsBank.get(i).setLink(temporaryInput);
+				
+				
+				System.out.println("\nAward has been successfully edited in the Bank!");
+			}
+
+			else
+			{
+				System.out.println("\nAward has NOT been edited in the Bank!\n");
+			}
+
+		}
+		else
+		{
+			System.out.println("Invalid Choice!");
+			return;
+		}
+
+		System.out.println("\n\nPress 0 Key to Continue...\n");
+		while (true)
+		{
+			ch = (char) br.read();
+			if(ch == '0')
+				return;
+		}
+
+}
 
 	public void displayAwardBankList() throws IOException
 	{
@@ -1574,7 +1727,424 @@ public class allFunctions implements Serializable
 
 	}
 
+	public void generateAwardCode()
+	{
+		
+		
 
+		String fileName = "movieAwardCode_"+movieWhosAwardsWereJustGenerated+".txt";
+		TextIO.writeFile(fileName);
+
+		TextIO.putln("<font face=\"Yanone Kaffeesatz Regular\" size=\"6\">Awards & Nominations:</font>");
+		TextIO.putln("<br>");
+
+		TextIO.putln();
+
+		TextIO.putln("<!DOCTYPE html>");
+		TextIO.putln("<html>");
+		TextIO.putln("<head>");
+		TextIO.putln("<style>");
+
+		TextIO.putln();
+
+		TextIO.putln("/* http://ianlunn.github.io/Hover/# ( for hover effects by Ian Lunn) */");
+		TextIO.putln("/* Hover effects are on his Github. Each effect has a class in the hover.css file */");
+		TextIO.putln("/* GITHUB LINK: https://github.com/IanLunn/Hover */");
+
+		TextIO.putln("/* GROW CODE */");
+		TextIO.putln(".grow {");
+		TextIO.putln("display: inline-block;");
+		TextIO.putln("-webkit-transition-duration: 0.1s;");
+		TextIO.putln("transition-duration: 0.1s;");
+		TextIO.putln("-webkit-transition-property: transform;");
+		TextIO.putln("transition-property: transform;");
+		TextIO.putln("-webkit-transform: translateZ(0);");
+		TextIO.putln("transform: translateZ(0);");
+		TextIO.putln("}");
+
+		TextIO.putln("");
+
+		TextIO.putln("/* GROW HOVER CODE */");
+		TextIO.putln(".grow:hover, .grow:focus, .grow:active");
+		TextIO.putln("{");
+		TextIO.putln("-webkit-transform:  translateZ(0) scale(1.1);");
+		TextIO.putln("transform: translateZ(0) scale(1.1);");
+		TextIO.putln("}");
+
+		TextIO.putln("");
+
+		TextIO.putln("/** Description: Creates Text Box on Hover. The Decoration/Colors can be edited");
+		TextIO.putln("* Author: Code taken online (unknown)");
+		TextIO.putln("*/");
+
+		TextIO.putln(".tab");
+		TextIO.putln("{");
+		TextIO.putln("float: left;");
+		TextIO.putln("}");
+
+		TextIO.putln("");
+
+		TextIO.putln(".tabcontent{");
+		TextIO.putln("margin-top:1px;");
+		TextIO.putln("margin-left: -10px;");
+		TextIO.putln("position: absolute;");
+		TextIO.putln("padding:0px 0 0 10px;");
+		TextIO.putln("background: rgba(0,0,0,0.9);");
+		TextIO.putln("/* Safari 4-5, Chrome 1-9 */");
+		TextIO.putln("background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#1947A4), to(#4A7EBD));");
+		TextIO.putln("/* Safari 5.1, Chrome 10+ */");
+		TextIO.putln("background: -webkit-linear-gradient(top, #1947A4, #4A7EBD);");
+		TextIO.putln("/* Firefox 3.6+ */");
+		TextIO.putln("background: -moz-linear-gradient(top, #020202, #4A4A4A);");
+		TextIO.putln("/* IE 10 */");
+		TextIO.putln("background: -ms-linear-gradient(top, #020202, #4A4A4A);");
+		TextIO.putln("/* Opera 11.10+ */");
+		TextIO.putln("background: -o-linear-gradient(top, #020202, #4A4A4A);");
+		TextIO.putln("/*  border:1px solid #000; */");
+		TextIO.putln("border-radius: 12px ;");
+		TextIO.putln("height:150px;");
+		TextIO.putln("width: 250px;");
+		TextIO.putln("display:none;");
+		TextIO.putln("transition: all 1.2s;");
+		TextIO.putln("box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);");
+		TextIO.putln("}");
+
+		TextIO.putln("");
+
+		TextIO.putln(".tab:hover > .tabcontent");
+		TextIO.putln("{");
+		TextIO.putln("display: block;");
+		TextIO.putln("}");
+
+		TextIO.putln("");
+
+		TextIO.putln("/** Description: Gap Animation code between rows of awards");
+		TextIO.putln("*Functionality/Usage: <div class=\"gap\"> (includes a row of awards) </div>");
+		TextIO.putln("* Authors: Vishrut,Sukrit (www.midnightjabber.com)");
+		TextIO.putln("*/");
+
+		TextIO.putln("");
+
+		TextIO.putln(".gap:hover");
+		TextIO.putln("{");
+		TextIO.putln("");
+		TextIO.putln("margin-bottom:180px;");
+		TextIO.putln("transition: all 0.5s;");
+		TextIO.putln("}");
+
+		TextIO.putln("");
+
+		TextIO.putln(".lastgap:hover");
+		TextIO.putln("{");
+		TextIO.putln("margin-bottom:205px;");
+		TextIO.putln("transition: all 0.5s;");
+		TextIO.putln("}");
+
+		TextIO.putln("");
+
+		TextIO.putln("/* For Testing Purposes */");
+		TextIO.putln(".solid_border {");
+		TextIO.putln("border-style: dashed;");
+		TextIO.putln("}");
+
+		TextIO.putln("");
+
+		TextIO.putln(".scrollbar");
+		TextIO.putln("{");
+		TextIO.putln("margin-top:5px;");
+		TextIO.putln("height: 140px;");
+		TextIO.putln("width: 249px;");
+		TextIO.putln("overflow-y: auto;");
+		TextIO.putln("}");
+
+		TextIO.putln("");
+
+		TextIO.putln(".force-overflow");
+		TextIO.putln("{");
+		TextIO.putln("overflow-y: auto;");
+		TextIO.putln("}");
+
+		TextIO.putln("");
+
+		TextIO.putln("/*");
+		TextIO.putln("*  STYLE 1");
+		TextIO.putln("*/");
+
+		TextIO.putln();
+		TextIO.putln("#style-1::-webkit-scrollbar-track");
+		TextIO.putln("{");
+		TextIO.putln("-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);");
+		TextIO.putln("border-radius: 12px;");
+		TextIO.putln("background: -webkit-linear-gradient(top, #1947A4, #4A7EBD);");
+		TextIO.putln("}");
+
+		TextIO.putln("");
+
+		TextIO.putln("#style-1::-webkit-scrollbar");
+		TextIO.putln("{");
+		TextIO.putln("border-radius: 12px;");
+		TextIO.putln("width: 8px;");
+		TextIO.putln("}");
+
+		TextIO.putln("");
+
+		TextIO.putln("#style-1::-webkit-scrollbar-thumb");
+		TextIO.putln("{");
+		TextIO.putln("border-radius: 12px;");
+		TextIO.putln("-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.5);");
+		TextIO.putln("background-color: #555;");
+		TextIO.putln("}");
+
+		TextIO.putln("");
+
+		TextIO.putln("</style>");
+		TextIO.putln("</head>");
+
+		TextIO.putln("");
+
+		/*-----------------------------------------------------BODY TIME----------------------------------------------------*/
+		// Now we are in the Body guys. Time to own this logic!
+		TextIO.putln("<body>");
+
+		TextIO.putln("");
+
+		String splitAwards[]; // Splits all information of an award into
+								// different elements
+		String splitPpl[];
+
+		ArrayList<String> temp = new ArrayList<String>();
+		ArrayList<String> duplicateAwardsList = new ArrayList<String>();
+
+		String tempAwardName = "", tempAwardYear = "", tempAwardDesc = "", tempAwardPpl = "", tempAwardOutcome = "";
+		String randomTemporaryString;
+		int counter = -1;
+
+		int totalAwardMatches = 0, var, offset; // VAR and OFFSet
+		String previousYear = "", previousAward = "";
+		boolean oneWayFlag, open;
+
+		// This loop is used to gather the total number of awards
+		// Holy shit we did not think of a better way
+		for(int i = 0; i < awardsBank.size(); i++)
+		{
+
+			// Loop to check if we have a IMDB Match of Award with our Award
+			// Bank
+			for(int j = 0; j < awards.size(); j++)
+			{
+
+				// Hit a match!
+				if(awardsBank.get(i).getName()
+								.equals(awards.get(j).split(";")[1]))
+				{
+
+					totalAwardMatches++; // To count the number of matches
+					break;
+
+				}
+
+			}
+		}
+
+		int randomFlag;
+
+		for(int i = 0; i < awardsBank.size(); i++)
+		{
+
+			oneWayFlag = false;
+
+			duplicateAwardsList.clear(); // Used to clear the list for next use
+
+			// Loop to check if we have a IMDB Match of Award with our Award
+			// Bank
+			for(int j = 0; j < awards.size(); j++)
+			{
+
+				// Hit a match!
+				if(awardsBank.get(i).getName()
+								.equals(awards.get(j).split(";")[1]))
+				{
+					duplicateAwardsList.add(awards.get(j));
+
+					if(!oneWayFlag)
+					{
+						counter++; // To count the number of matches
+						oneWayFlag = true;
+
+						var = totalAwardMatches % 4;
+						offset = totalAwardMatches - var;
+
+						if(offset == totalAwardMatches)
+						{
+							offset = offset - 4;
+						}
+
+						if(counter == -1)
+						{
+						}
+
+						else if(counter != offset && (counter + 1 % 4 == 0))
+						{
+							String str = "Counter: " + Integer.toString(counter) + "  Offset: " + Integer.toString(offset);
+
+							TextIO.putln("<!--" + str + "-->");
+
+							TextIO.putln("</div>");
+						}
+
+						else if(counter == offset && offset != 0)
+						{
+							TextIO.putln("</div>");
+							TextIO.putln("<br>");
+							TextIO.putln("<br>");
+							TextIO.putln("<br>");
+							TextIO.putln("<div class=\"lastgap\">");
+						}
+
+						else if(counter == offset && offset == 0)
+						{
+							TextIO.putln("<div class=\"lastgap\">");
+						}
+
+						else if(counter % 4 == 0 && counter != offset)
+						{
+							TextIO.putln("<div class=\"gap\">");
+						}
+
+						else if(counter == (totalAwardMatches - 1))
+						{
+							randomFlag = 0;
+						}
+
+					}
+				}
+
+			}
+
+			open = false;
+
+			for(int j = 0; j < duplicateAwardsList.size(); j++)
+			{
+
+				splitAwards = duplicateAwardsList.get(j).split(";");
+				randomTemporaryString = splitAwards[3];
+				splitPpl = randomTemporaryString.split("\\|");
+
+				for(int m = 0; m < splitPpl.length; m++)
+				{
+
+					if(m == 0)
+					{
+						tempAwardPpl = splitPpl[m];
+					}
+
+					else
+					{
+						tempAwardPpl = tempAwardPpl + ", " + splitPpl[m];
+					}
+				}
+
+				previousYear = tempAwardYear;
+				previousAward = tempAwardName;
+				tempAwardYear = splitAwards[0];
+				tempAwardName = splitAwards[1];
+				tempAwardDesc = splitAwards[2];
+				tempAwardOutcome = splitAwards[4];
+
+				if(!(tempAwardName.equalsIgnoreCase(previousAward)))
+				{
+
+					TextIO.putln("<!-- *****************************" + tempAwardName + "," + tempAwardYear + " *************************** -->");
+
+					if(counter % 4 == 0)
+					{
+						TextIO.putln("<div class=\"tab\" style=\" margin-left: 10px;\">");
+
+					}
+
+					else if(counter % 4 == 1)
+					{
+						TextIO.putln("<div class=\"tab\" style=\" margin-left: 35px;\">");
+
+					}
+
+					else if(counter % 4 == 2)
+					{
+						TextIO.putln("<div class=\"tab\" style=\" margin-left: 50px;\">");
+
+					}
+
+					else if(counter % 4 == 3)
+					{
+						TextIO.putln("<div class=\"tab\" style=\" margin-left: 60px;\">");
+
+					}
+
+					TextIO.putln("<a href=\"http://midnightjabber.com/legend/\"><img class =\" grow \" src=\"" + awardsBank.get(i)
+																															.getLink() + "\" style=\"height: 50px; width: auto;\" title=\"\"></a>");
+					TextIO.putln("<div class=\"tabcontent\">");
+					TextIO.putln("<div class=\"scrollbar\" id=\"style-1\">");
+					TextIO.putln("<div class=\"force-overflow\">");
+					TextIO.putln("<font size=\"4\" color=\"#F7AD07\"><b><u>" + tempAwardName.toUpperCase() + " " + tempAwardYear + "</u></b></font>");
+
+					TextIO.putln();
+					TextIO.putln("<br>");
+
+				}
+
+				if((tempAwardName.equalsIgnoreCase(previousAward)) && !(tempAwardYear.equals(previousYear)))
+				{
+
+					TextIO.putln("<font size=\"4\" color=\"#F7AD07\"><b><u>" + tempAwardName.toUpperCase() + " " + tempAwardYear + "</u></b></font>");
+
+					TextIO.putln();
+					TextIO.putln("<br>");
+
+				}
+
+				if(tempAwardOutcome.equalsIgnoreCase("Won"))
+					TextIO.putln("<img src=\"http://midnightjabber.com/wp-content/uploads/2014/07/Award-Won.png\" style=\"height: 12px; width: auto;\" title=\"Won!\"><font size=\"3\"color=\"white\" style=\"margin-left:5px;\"><b><u>" + tempAwardDesc + "</u></b></font>");
+				else
+					TextIO.putln("<img src=\"http://midnightjabber.com/wp-content/uploads/2014/07/Award-Lose.png\" style=\"height: 12px; width: auto;\" title=\"Nominated\"><font size=\"3\"color=\"white\" style=\"margin-left:5px;\"><b><u>" + tempAwardDesc + "</u></b></font>");
+
+				TextIO.putln("<br>");
+				TextIO.putln("<font size=\"2\" color=\"white\">" + tempAwardPpl + "</font>");
+
+				if(j != (duplicateAwardsList.size() - 1))
+				{
+					TextIO.putln("<br>");
+					TextIO.putln("<br>");
+
+				}
+				else
+				{
+					TextIO.putln();
+					TextIO.putln("</div>");
+					TextIO.putln("</div>");
+					TextIO.putln("</div>");
+					TextIO.putln("</div>");
+					TextIO.putln();
+					TextIO.putln();
+				}
+
+			}
+
+		}
+		
+		if((counter + 1 % 4 == 0) || counter == (totalAwardMatches - 1))
+		{
+			String str = "Counter: " + Integer.toString(counter) + "  Offset: " + Integer.toString(totalAwardMatches);
+
+			TextIO.putln("<!--" + str + "-->");
+
+			TextIO.putln("</div>");
+		}
+
+		TextIO.putln("</body>");
+		TextIO.putln("</html>");
+
+	}// Function Close
+	
 	public ArrayList<Integer> findAnAward() throws IOException
 	{
 		System.out.println("                                      Searching For an Award                                    ");
@@ -1631,7 +2201,6 @@ public class allFunctions implements Serializable
 
 	}
 
-
 	public void addNewAuthor() throws IOException
 	{
 		System.out.println("\n");
@@ -1646,7 +2215,6 @@ public class allFunctions implements Serializable
 
 		authorsBank.add(name);
 	}
-
 
 	public ArrayList<Integer> findAnAuthor() throws IOException
 	{
@@ -1701,7 +2269,6 @@ public class allFunctions implements Serializable
 		}
 
 	}
-
 
 	public ArrayList<Integer> findAnAuthorsWorks() throws IOException
 	{
@@ -1814,7 +2381,6 @@ public class allFunctions implements Serializable
 
 	}
 
-
 	public void editAuthorBank() throws NumberFormatException, IOException
 	{
 		InputStreamReader rd = new InputStreamReader(System.in);
@@ -1898,7 +2464,6 @@ public class allFunctions implements Serializable
 		}
 	}
 
-
 	public void deleteAuthor() throws IOException
 	{
 		InputStreamReader rd = new InputStreamReader(System.in);
@@ -1978,7 +2543,6 @@ public class allFunctions implements Serializable
 		}
 	}
 
-
 	public void displayAuthorBank() throws IOException
 	{
 		System.out.println("------------------------- Author Bank -------------------------");
@@ -2002,7 +2566,6 @@ public class allFunctions implements Serializable
 				return;
 		}
 	}
-
 
 	public void generateAuthorsCode() throws IOException
 	{
@@ -2342,426 +2905,5 @@ public class allFunctions implements Serializable
 
 	}
 
-
-	public void generateAwardCode()
-	{
-
-		String fileName = "movieAwardCode.txt";
-		TextIO.writeFile(fileName);
-
-		TextIO.putln("<font face=\"Yanone Kaffeesatz Regular\" size=\"6\">Awards & Nominations:</font>");
-		TextIO.putln("<br>");
-
-		TextIO.putln();
-
-		TextIO.putln("<!DOCTYPE html>");
-		TextIO.putln("<html>");
-		TextIO.putln("<head>");
-		TextIO.putln("<style>");
-
-		TextIO.putln();
-
-		TextIO.putln("/* http://ianlunn.github.io/Hover/# ( for hover effects by Ian Lunn) */");
-		TextIO.putln("/* Hover effects are on his Github. Each effect has a class in the hover.css file */");
-		TextIO.putln("/* GITHUB LINK: https://github.com/IanLunn/Hover */");
-
-		TextIO.putln("/* GROW CODE */");
-		TextIO.putln(".grow {");
-		TextIO.putln("display: inline-block;");
-		TextIO.putln("-webkit-transition-duration: 0.1s;");
-		TextIO.putln("transition-duration: 0.1s;");
-		TextIO.putln("-webkit-transition-property: transform;");
-		TextIO.putln("transition-property: transform;");
-		TextIO.putln("-webkit-transform: translateZ(0);");
-		TextIO.putln("transform: translateZ(0);");
-		TextIO.putln("}");
-
-		TextIO.putln("");
-
-		TextIO.putln("/* GROW HOVER CODE */");
-		TextIO.putln(".grow:hover, .grow:focus, .grow:active");
-		TextIO.putln("{");
-		TextIO.putln("-webkit-transform:  translateZ(0) scale(1.1);");
-		TextIO.putln("transform: translateZ(0) scale(1.1);");
-		TextIO.putln("}");
-
-		TextIO.putln("");
-
-		TextIO.putln("/** Description: Creates Text Box on Hover. The Decoration/Colors can be edited");
-		TextIO.putln("* Author: Code taken online (unknown)");
-		TextIO.putln("*/");
-
-		TextIO.putln(".tab");
-		TextIO.putln("{");
-		TextIO.putln("float: left;");
-		TextIO.putln("}");
-
-		TextIO.putln("");
-
-		TextIO.putln(".tabcontent{");
-		TextIO.putln("margin-top:1px;");
-		TextIO.putln("margin-left: -10px;");
-		TextIO.putln("position: absolute;");
-		TextIO.putln("padding:0px 0 0 10px;");
-		TextIO.putln("background: rgba(0,0,0,0.9);");
-		TextIO.putln("/* Safari 4-5, Chrome 1-9 */");
-		TextIO.putln("background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#1947A4), to(#4A7EBD));");
-		TextIO.putln("/* Safari 5.1, Chrome 10+ */");
-		TextIO.putln("background: -webkit-linear-gradient(top, #1947A4, #4A7EBD);");
-		TextIO.putln("/* Firefox 3.6+ */");
-		TextIO.putln("background: -moz-linear-gradient(top, #020202, #4A4A4A);");
-		TextIO.putln("/* IE 10 */");
-		TextIO.putln("background: -ms-linear-gradient(top, #020202, #4A4A4A);");
-		TextIO.putln("/* Opera 11.10+ */");
-		TextIO.putln("background: -o-linear-gradient(top, #020202, #4A4A4A);");
-		TextIO.putln("/*  border:1px solid #000; */");
-		TextIO.putln("border-radius: 12px ;");
-		TextIO.putln("height:150px;");
-		TextIO.putln("width: 250px;");
-		TextIO.putln("display:none;");
-		TextIO.putln("transition: all 1.2s;");
-		TextIO.putln("box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);");
-		TextIO.putln("}");
-
-		TextIO.putln("");
-
-		TextIO.putln(".tab:hover > .tabcontent");
-		TextIO.putln("{");
-		TextIO.putln("display: block;");
-		TextIO.putln("}");
-
-		TextIO.putln("");
-
-		TextIO.putln("/** Description: Gap Animation code between rows of awards");
-		TextIO.putln("*Functionality/Usage: <div class=\"gap\"> (includes a row of awards) </div>");
-		TextIO.putln("* Authors: Vishrut,Sukrit (www.midnightjabber.com)");
-		TextIO.putln("*/");
-
-		TextIO.putln("");
-
-		TextIO.putln(".gap:hover");
-		TextIO.putln("{");
-		TextIO.putln("");
-		TextIO.putln("margin-bottom:180px;");
-		TextIO.putln("transition: all 0.5s;");
-		TextIO.putln("}");
-
-		TextIO.putln("");
-
-		TextIO.putln(".lastgap:hover");
-		TextIO.putln("{");
-		TextIO.putln("margin-bottom:205px;");
-		TextIO.putln("transition: all 0.5s;");
-		TextIO.putln("}");
-
-		TextIO.putln("");
-
-		TextIO.putln("/* For Testing Purposes */");
-		TextIO.putln(".solid_border {");
-		TextIO.putln("border-style: dashed;");
-		TextIO.putln("}");
-
-		TextIO.putln("");
-
-		TextIO.putln(".scrollbar");
-		TextIO.putln("{");
-		TextIO.putln("margin-top:5px;");
-		TextIO.putln("height: 140px;");
-		TextIO.putln("width: 249px;");
-		TextIO.putln("overflow-y: auto;");
-		TextIO.putln("}");
-
-		TextIO.putln("");
-
-		TextIO.putln(".force-overflow");
-		TextIO.putln("{");
-		TextIO.putln("overflow-y: auto;");
-		TextIO.putln("}");
-
-		TextIO.putln("");
-
-		TextIO.putln("/*");
-		TextIO.putln("*  STYLE 1");
-		TextIO.putln("*/");
-
-		TextIO.putln();
-		TextIO.putln("#style-1::-webkit-scrollbar-track");
-		TextIO.putln("{");
-		TextIO.putln("-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);");
-		TextIO.putln("border-radius: 12px;");
-		TextIO.putln("background: -webkit-linear-gradient(top, #1947A4, #4A7EBD);");
-		TextIO.putln("}");
-
-		TextIO.putln("");
-
-		TextIO.putln("#style-1::-webkit-scrollbar");
-		TextIO.putln("{");
-		TextIO.putln("border-radius: 12px;");
-		TextIO.putln("width: 8px;");
-		TextIO.putln("}");
-
-		TextIO.putln("");
-
-		TextIO.putln("#style-1::-webkit-scrollbar-thumb");
-		TextIO.putln("{");
-		TextIO.putln("border-radius: 12px;");
-		TextIO.putln("-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.5);");
-		TextIO.putln("background-color: #555;");
-		TextIO.putln("}");
-
-		TextIO.putln("");
-
-		TextIO.putln("</style>");
-		TextIO.putln("</head>");
-
-		TextIO.putln("");
-
-		/*-----------------------------------------------------BODY TIME----------------------------------------------------*/
-		// Now we are in the Body guys. Time to own this logic!
-		TextIO.putln("<body>");
-
-		TextIO.putln("");
-
-		String splitAwards[]; // Splits all information of an award into
-								// different elements
-		String splitPpl[];
-
-		ArrayList<String> temp = new ArrayList<String>();
-		ArrayList<String> duplicateAwardsList = new ArrayList<String>();
-
-		String tempAwardName = "", tempAwardYear = "", tempAwardDesc = "", tempAwardPpl = "", tempAwardOutcome = "";
-		String randomTemporaryString;
-		int counter = -1;
-
-		int totalAwardMatches = 0, var, offset;   //VAR and OFFSet
-		String previousYear = "", previousAward="";
-		boolean oneWayFlag, open;
-
-		// This loop is used to gather the total number of awards
-		// Holy shit we did not think of a better way
-		for(int i = 0; i < awardsBank.size(); i++)
-		{
-
-			// Loop to check if we have a IMDB Match of Award with our Award
-			// Bank
-			for(int j = 0; j < awards.size(); j++)
-			{
-
-				// Hit a match!
-				if(awardsBank.get(i).getName()
-								.equals(awards.get(j).split(";")[1]))
-				{
-
-					totalAwardMatches++; // To count the number of matches
-					break;
-
-				}
-
-			}
-		}
-
-		int randomFlag;
-
-		for(int i = 0; i < awardsBank.size(); i++)
-		{
-
-			oneWayFlag = false;
-
-			duplicateAwardsList.clear(); // Used to clear the list for next use
-
-			// Loop to check if we have a IMDB Match of Award with our Award
-			// Bank
-			for(int j = 0; j < awards.size(); j++)
-			{
-
-				// Hit a match!
-				if(awardsBank.get(i).getName()
-								.equals(awards.get(j).split(";")[1]))
-				{
-					duplicateAwardsList.add(awards.get(j));
-
-					if(!oneWayFlag)
-					{
-						counter++; // To count the number of matches
-						oneWayFlag = true;
-
-						var = totalAwardMatches % 4;
-						offset = totalAwardMatches - var;
-						
-						if(offset==totalAwardMatches)
-						{
-							offset=offset-4;
-						}
-
-						if(counter == -1)
-						{
-						}
-
-						else if(counter != offset && (counter+1%4==0))
-						{
-							String str="Counter: "+Integer.toString(counter)+"  Offset: "+Integer.toString(offset);
-							
-							TextIO.putln("<!--"+str+"-->");
-							
-							TextIO.putln("</div>");
-						}
-						
-						else if(counter == offset && offset != 0)
-						{
-							TextIO.putln("</div>");
-							TextIO.putln("<br>");
-							TextIO.putln("<br>");
-							TextIO.putln("<br>");
-							TextIO.putln("<div class=\"lastgap\">");
-						}
-
-						else if(counter == offset && offset == 0)
-						{
-							TextIO.putln("<div class=\"lastgap\">");
-						}
-
-						else if(counter % 4 == 0 && counter != offset)
-						{
-							TextIO.putln("<div class=\"gap\">");
-						}
-
-						else if(counter == (totalAwardMatches - 1))
-						{
-							randomFlag = 0;
-						}
-
-					}
-				}
-
-			}
-
-			open = false;
-
-			for(int j = 0; j < duplicateAwardsList.size(); j++)
-			{
-
-				splitAwards = duplicateAwardsList.get(j).split(";");
-				randomTemporaryString = splitAwards[3];
-				splitPpl = randomTemporaryString.split("\\|");
-
-				for(int m = 0; m < splitPpl.length; m++)
-				{
-
-					if(m == 0)
-					{
-						tempAwardPpl = splitPpl[m];
-					}
-
-					else
-					{
-						tempAwardPpl = tempAwardPpl + ", " + splitPpl[m];
-					}
-				}
-
-				previousYear = tempAwardYear;
-				previousAward = tempAwardName;
-				tempAwardYear = splitAwards[0];
-				tempAwardName = splitAwards[1];
-				tempAwardDesc = splitAwards[2];
-				tempAwardOutcome = splitAwards[4];
-
-				
-				
-				if(!(tempAwardName.equalsIgnoreCase(previousAward)))
-				{
-
-					TextIO.putln("<!-- *****************************" + tempAwardName + "," + tempAwardYear + " *************************** -->");
-					
-					if(counter%4==0)
-					{
-						TextIO.putln("<div class=\"tab\" style=\" margin-left: 10px;\">");
-						
-					}
-					
-					else if(counter%4==1)
-					{
-						TextIO.putln("<div class=\"tab\" style=\" margin-left: 35px;\">");
-						
-					}
-					
-					else if(counter%4==2)
-					{
-						TextIO.putln("<div class=\"tab\" style=\" margin-left: 50px;\">");
-						
-					}
-					
-					else if(counter%4==3)
-					{
-						TextIO.putln("<div class=\"tab\" style=\" margin-left: 60px;\">");
-						
-					}
-					
-					TextIO.putln("<a href=\"http://midnightjabber.com/legend/\"><img class =\" grow \" src=\"" + awardsBank.get(i).getLink() + "\" style=\"height: 50px; width: auto;\" title=\"\"></a>");
-					TextIO.putln("<div class=\"tabcontent\">");
-					TextIO.putln("<div class=\"scrollbar\" id=\"style-1\">");
-					TextIO.putln("<div class=\"force-overflow\">");
-					TextIO.putln("<font size=\"4\" color=\"#F7AD07\"><b><u>" + tempAwardName.toUpperCase() + " " + tempAwardYear + "</u></b></font>");
-
-					TextIO.putln();
-					TextIO.putln("<br>");
-
-				}
-
-				
-				if((tempAwardName.equalsIgnoreCase(previousAward)) && !(tempAwardYear.equals(previousYear)))
-				{
-
-					TextIO.putln("<font size=\"4\" color=\"#F7AD07\"><b><u>" + tempAwardName.toUpperCase() + " " + tempAwardYear + "</u></b></font>");
-
-					TextIO.putln();
-					TextIO.putln("<br>");
-
-				}
-				
-				
-				if(tempAwardOutcome.equalsIgnoreCase("Won"))
-					TextIO.putln("<img src=\"http://midnightjabber.com/wp-content/uploads/2014/07/Award-Won.png\" style=\"height: 12px; width: auto;\" title=\"Won!\"><font size=\"3\"color=\"white\" style=\"margin-left:5px;\"><b><u>" + tempAwardDesc + "</u></b></font>");
-				else
-					TextIO.putln("<img src=\"http://midnightjabber.com/wp-content/uploads/2014/07/Award-Lose.png\" style=\"height: 12px; width: auto;\" title=\"Nominated\"><font size=\"3\"color=\"white\" style=\"margin-left:5px;\"><b><u>" + tempAwardDesc + "</u></b></font>");
-
-				TextIO.putln("<br>");
-				TextIO.putln("<font size=\"2\" color=\"white\">" + tempAwardPpl + "</font>");
-
-				if(j != (duplicateAwardsList.size() - 1))
-				{
-					TextIO.putln("<br>");
-					TextIO.putln("<br>");
-
-				}
-				else
-				{
-					TextIO.putln();
-					TextIO.putln("</div>");
-					TextIO.putln("</div>");
-					TextIO.putln("</div>");
-					TextIO.putln("</div>");
-					TextIO.putln();
-					TextIO.putln();
-				}
-				
-				
-
-			}
-			
-			
-		}
-		
-		if((counter+1%4==0) || counter==(totalAwardMatches-1))
-		{
-			String str="Counter: "+Integer.toString(counter)+"  Offset: "+Integer.toString(totalAwardMatches);
-			
-			TextIO.putln("<!--"+str+"-->");
-			
-			TextIO.putln("</div>");
-		}
-
-		TextIO.putln("</body>");
-		TextIO.putln("</html>");
 	
-	}//Function Close
 }
