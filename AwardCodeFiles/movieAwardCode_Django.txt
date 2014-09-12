@@ -277,11 +277,7 @@ background-color: #555;
 </div>
 
 
-</div>
-<br>
-<br>
-<br>
-<div class="lastgap">
+<div class="gap">
 <!-- *****************************MTV Movie Award,2013 *************************** -->
 <div class="tab" style=" margin-left: 10px;">
 <a href="http://midnightjabber.com/legend/"><img class =" grow " src="http://midnightjabber.com/wp-content/uploads/2014/07/MTV-Movie-Award.png" style="height: 50px; width: auto;" title=""></a>
@@ -293,12 +289,12 @@ background-color: #555;
 <br>
 <img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Won.png" style="height: 12px; width: auto;" title="Won!"><font size="3"color="white" style="margin-left:5px;"><b><u>Best WTF Moment</u></b></font>
 <br>
-<font size="2" color="white">Jamie Foxx, Samuel L. Jackson, More</font>
+<font size="2" color="white">Jamie Foxx, Samuel L. Jackson</font>
 <br>
 <br>
 <img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Lose.png" style="height: 12px; width: auto;" title="Nominated"><font size="3"color="white" style="margin-left:5px;"><b><u>Movie of the Year</u></b></font>
 <br>
-<font size="2" color="white">More</font>
+<font size="2" color="white">Jamie Foxx, Samuel L. Jackson</font>
 <br>
 <br>
 <img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Lose.png" style="height: 12px; width: auto;" title="Nominated"><font size="3"color="white" style="margin-left:5px;"><b><u>Best Male Performance</u></b></font>
@@ -318,7 +314,7 @@ background-color: #555;
 <br>
 <img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Lose.png" style="height: 12px; width: auto;" title="Nominated"><font size="3"color="white" style="margin-left:5px;"><b><u>Best Fight</u></b></font>
 <br>
-<font size="2" color="white">Jamie Foxx, More</font>
+<font size="2" color="white">Jamie Foxx</font>
 <br>
 <br>
 <img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Lose.png" style="height: 12px; width: auto;" title="Nominated"><font size="3"color="white" style="margin-left:5px;"><b><u>Best On-Screen Duo</u></b></font>
@@ -393,7 +389,70 @@ background-color: #555;
 </div>
 
 
-<!--Counter: 7  Offset: 8-->
+</div>
+<br>
+<br>
+<br>
+<div class="lastgap">
+<!-- *****************************AFI Award,2013 *************************** -->
+<div class="tab" style=" margin-left: 10px;">
+<a href="http://midnightjabber.com/legend/"><img class =" grow " src="http://midnightjabber.com/wp-content/uploads/2014/09/AFI-Award.png" style="height: 50px; width: auto;" title=""></a>
+<div class="tabcontent">
+<div class="scrollbar" id="style-1">
+<div class="force-overflow">
+<font size="4" color="#F7AD07"><b><u>AFI AWARD 2013</u></b></font>
+
+<br>
+<img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Won.png" style="height: 12px; width: auto;" title="Won!"><font size="3"color="white" style="margin-left:5px;"><b><u>Movie of the Year</u></b></font>
+<br>
+<font size="2" color="white">Stacey Sher, Reginald Hudlin, Pilar Savone</font>
+
+</div>
+</div>
+</div>
+</div>
+
+
+<!-- *****************************Golden Trailer,2013 *************************** -->
+<div class="tab" style=" margin-left: 35px;">
+<a href="http://midnightjabber.com/legend/"><img class =" grow " src="http://midnightjabber.com/wp-content/uploads/2014/09/Golden-Trailer-Award.png" style="height: 50px; width: auto;" title=""></a>
+<div class="tabcontent">
+<div class="scrollbar" id="style-1">
+<div class="force-overflow">
+<font size="4" color="#F7AD07"><b><u>GOLDEN TRAILER 2013</u></b></font>
+
+<br>
+<img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Won.png" style="height: 12px; width: auto;" title="Won!"><font size="3"color="white" style="margin-left:5px;"><b><u>Best Music TV Spot</u></b></font>
+<br>
+<font size="2" color="white">Weinstein Company, The, Columbia Pictures, Ignition Creative</font>
+<br>
+<br>
+<img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Lose.png" style="height: 12px; width: auto;" title="Nominated"><font size="3"color="white" style="margin-left:5px;"><b><u>Best Music</u></b></font>
+<br>
+<font size="2" color="white">Weinstein Company, The, Ignition Creative</font>
+<br>
+<br>
+<img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Lose.png" style="height: 12px; width: auto;" title="Nominated"><font size="3"color="white" style="margin-left:5px;"><b><u>Most Original Trailer</u></b></font>
+<br>
+<font size="2" color="white">Weinstein Company, The, Trailer Park</font>
+<br>
+<br>
+<img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Lose.png" style="height: 12px; width: auto;" title="Nominated"><font size="3"color="white" style="margin-left:5px;"><b><u>Best Foreign Graphics in a Trailer</u></b></font>
+<br>
+<font size="2" color="white">Weinstein Company, The, Greenhouse FX Studio, Köpenhamn, Columbia Pictures</font>
+<br>
+<br>
+<img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Lose.png" style="height: 12px; width: auto;" title="Nominated"><font size="3"color="white" style="margin-left:5px;"><b><u>Best Action Poster</u></b></font>
+<br>
+<font size="2" color="white">Weinstein Company, The, Columbia Pictures, Ignition Creative</font>
+
+</div>
+</div>
+</div>
+</div>
+
+
+<!--Counter: 9  Offset: 10-->
 </div>
 </body>
 </html>

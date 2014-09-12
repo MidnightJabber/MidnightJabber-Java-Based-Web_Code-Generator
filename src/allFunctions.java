@@ -1732,7 +1732,7 @@ public class allFunctions implements Serializable
 		
 		
 
-		String fileName = "movieAwardCode_"+movieWhosAwardsWereJustGenerated+".txt";
+		String fileName = "./AwardCodeFiles/movieAwardCode_"+movieWhosAwardsWereJustGenerated+".txt";
 		TextIO.writeFile(fileName);
 
 		TextIO.putln("<font face=\"Yanone Kaffeesatz Regular\" size=\"6\">Awards & Nominations:</font>");
@@ -2611,7 +2611,7 @@ public class allFunctions implements Serializable
 		int numberOfDivisions;
 		int j = 0, k = 0;
 
-		String fileName = authorName + "sPage.txt";
+		String fileName = "./AuthorPageFile/"+authorName + "sPage.txt";
 		TextIO.writeFile(fileName);
 
 		// ****************************************************

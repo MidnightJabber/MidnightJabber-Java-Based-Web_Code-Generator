@@ -36,8 +36,8 @@ public class mainRun
 		System.out.println("25. Delete Author (from Bank)");
 		System.out.println("26. Display Author Bank");
 		
-		
-		
+		System.out.println("_____________________________________________________________________________________________________________________________________________");
+			
 
 		
 		System.out.println("\n\n");
@@ -80,7 +80,7 @@ public class mainRun
 					obj.getMovie();
 					obj.saveFile();
 					System.out.println("\nAddition has been saved to (.SER) file!\n");
-					Thread.sleep(3000);
+					Thread.sleep(2000);
 					break;
 
 				case 2:
@@ -91,26 +91,26 @@ public class mainRun
 					obj.editMovie();
 					obj.saveFile();
 					System.out.println("\nChanges have been saved!\n");
-					Thread.sleep(3000);
+					Thread.sleep(2000);
 					break;
 
 				case 4:
 					obj.deleteMovie();
 					obj.saveFile();
 					System.out.println("\nChanges have been saved!\n");
-					Thread.sleep(3000);
+					Thread.sleep(2000);
 					break;
 
 				case 5:
 					obj.openFile();
 					System.out.println("File Opened!\n");
-					Thread.sleep(3000);
+					Thread.sleep(2000);
 					break;
 
 				case 6:
 					obj.saveFile();
 					System.out.println("\nFile Has been saved!\n");
-					Thread.sleep(3000);
+					Thread.sleep(2000);
 					break;
 
 				case 7:
@@ -121,25 +121,25 @@ public class mainRun
 					obj.sortListsByReleaseDates();
 					obj.saveFile();
 					System.out.println("List has been Sorted and Saved!\n");
-					Thread.sleep(3000);
+					Thread.sleep(2000);
 					break;
 
 				case 9:
 					obj.saveCodetoFile();
 					System.out.println("Saved To File!\n");
-					Thread.sleep(3000);
+					Thread.sleep(2000);
 					break;
 
 				case 10:
 					obj.sortListsAlphabetically();
 					System.out.println("List has been Sorted but NOT Saved!\n");
-					Thread.sleep(3000);
+					Thread.sleep(2000);
 					break;
 
 				case 11:
 					obj.saveAlphabeticalCodetoFile();
 					System.out.println("Saved To File!\n");
-					Thread.sleep(3000);
+					Thread.sleep(2000);
 					break;
 
 				case 12:
@@ -153,7 +153,7 @@ public class mainRun
 				case 13:
 					obj.retrieveAwards();
 					System.out.println("\nAwards Retrieved!\n");
-					Thread.sleep(3000);
+					Thread.sleep(2000);
 					break;
 
 				case 14:
