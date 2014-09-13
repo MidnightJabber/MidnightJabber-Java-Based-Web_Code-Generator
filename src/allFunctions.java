@@ -1736,7 +1736,7 @@ public class allFunctions implements Serializable
 		TextIO.writeFile(fileName);
 
 		TextIO.putln("<font face=\"Yanone Kaffeesatz Regular\" size=\"6\">Awards & Nominations:</font>");
-		TextIO.putln("<br>");
+		TextIO.putln("<br><br>");
 
 		TextIO.putln();
 
