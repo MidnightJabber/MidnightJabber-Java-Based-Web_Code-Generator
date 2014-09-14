@@ -1,7 +1,7 @@
 #MidnightJabber - Java Based Web Code Generator
 <pre lang="markdown">
 <code>
-Copyright (c) December 2013, www.midnightjabber.com
+Copyright (c) December 2013, <a href="www.midnightjabber.com">www.midnightjabber.com</a>
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
