@@ -1,5 +1,4 @@
 #MidnightJabber-Java-Based Web Code Generator
-
 <pre lang="markdown">
 <code>
 Copyright (c) December 2013, www.midnightjabber.com
@@ -30,3 +29,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 Authors: Vishrut Reddi, Sukrit Chhabra
 </code>
 </pre>
+
+##Usage
+
+This application was created for easy content entry and web page generation.
