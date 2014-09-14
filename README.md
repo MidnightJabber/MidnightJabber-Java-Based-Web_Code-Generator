@@ -33,3 +33,8 @@ Authors: Vishrut Reddi, Sukrit Chhabra
 ##Usage
 
 This application was created for easy content entry and web page generation.
+
+##AwardCodeFiles
+
+##BIN & SRC
+BIN folder cotains all the <code>::before .class ::after</code> files and the SRC folder contains all the <code> ::before .java ::after/code> files. Further explanation of each <code> ::before .java ::after/code> is explained int he README file available in the SRC folder.
