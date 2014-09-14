@@ -1,4 +1,4 @@
-#MidnightJabber-Java-Based Web Code Generator
+#MidnightJabber - Java Based Web Code Generator
 <pre lang="markdown">
 <code>
 Copyright (c) December 2013, www.midnightjabber.com
