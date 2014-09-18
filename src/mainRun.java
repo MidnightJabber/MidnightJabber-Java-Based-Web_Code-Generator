@@ -24,17 +24,17 @@ public class mainRun
 		
 		System.out.println("_____________________________________________________________________________________________________________________________________________");
 		System.out.println("");
-		System.out.println("<Author Functions>");
+		System.out.println("<Author Functions>			<Genre Functions>");
 		System.out.println("");
-		System.out.println("20. Find An Author");
-		System.out.println("21. Find An Authors Works");
+		System.out.println("20. Find An Author			27. Find A Genre");
+		System.out.println("21. Find An Authors Works		28. Find Works By Genre	");
 		System.out.println("");
-		System.out.println("22. Generate Authors Code ");
+		System.out.println("22. Generate Authors Code 		29. Generate Genre Page Code ");
 		System.out.println("");
-		System.out.println("23. Add New Auhtor To Author Bank");
-		System.out.println("24. Edit Author Bank");
-		System.out.println("25. Delete Author (from Bank)");
-		System.out.println("26. Display Author Bank");
+		System.out.println("23. Add New Author To Author Bank	30. Add New Genre To Genre Bank");
+		System.out.println("24. Edit Author Bank			31. Edit Genre Bank");
+		System.out.println("25. Delete Author (from Bank)		32. Delete Genre (from Bank)");
+		System.out.println("26. Display Author Bank			33. Display Genre Bank");
 		
 		System.out.println("_____________________________________________________________________________________________________________________________________________");
 			
@@ -150,6 +150,12 @@ public class mainRun
 					obj.saveAlphabeticalCodetoFile();
 					break;
 
+				
+				
+				
+				
+				
+				
 				case 13:
 					obj.retrieveAwards();
 					System.out.println("\nAwards Retrieved!\n");
@@ -183,6 +189,12 @@ public class mainRun
 					obj.generateAwardCode();
 					break;	
 					
+				
+				
+				
+				
+				
+				
 				case 20:
 					obj.findAnAuthor();
 					break;
@@ -197,7 +209,7 @@ public class mainRun
 					break;
 
 				case 23:
-					obj.addNewAuthor();
+					obj.addNewAuthorToAuthorBank();
 					obj.saveFile();
 					break;	
 					
@@ -214,9 +226,40 @@ public class mainRun
 				case 26:
 					obj.displayAuthorBank();
 					break;
-
+					
 				
+				
+				
+				
+				case 27:
+					obj.findAGenre();
+					break;
+				
+				case 28:
+					obj.findAMovieByGenre();
+					break;
+				
+				case 29:
+					obj.generateGenrePage();
+					break;	
 
+				case 30:
+					obj.addNewGenreToGenreBank();;
+					break;
+
+				case 31:
+					obj.editGenreBank();;
+					break;
+					
+				case 32:
+					obj.deleteGenreFromGenreBank();
+					break;
+				
+				case 33:
+					obj.displayGenreBank();
+					break;
+					
+					
 				default:
 					System.out.println("Wrong Option");
 					break;

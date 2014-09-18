@@ -101,25 +101,29 @@ div.newData{ background:#FFF; margin:10px 0px;}
 
 </font>
 <!--Image Area-->
-<a href="http://midnightjabber.com/movies/amazing-spiderman-2-2014/"><img class = "grow glow" src="http://midnightjabber.com/wp-content/uploads/2014/05/Amazing-Spider-Man-Poster-e1400297827296.png" width=215px height=auto title="" style="margin-left: 5px;" ></a>
+<a href="http://midnightjabber.com/movies/terminator-2-judgement-day/"><img class = "grow glow" src="http://midnightjabber.com/wp-content/uploads/2014/06/Terminator-2-Judgement-Day.jpg" width=215px height=auto title="" style="margin-left: 5px;" ></a>
 
-<a href="http://midnightjabber.com/movies/terminator-2-judgement-day/"><img class = "grow glow" src="http://midnightjabber.com/wp-content/uploads/2014/06/Terminator-2-Judgement-Day.jpg" width=215px height=auto title="" style="margin-left: 26px;" ></a>
+<a href="http://midnightjabber.com/movies/amazing-spiderman-2-2014/"><img class = "grow glow" src="http://midnightjabber.com/wp-content/uploads/2014/05/Amazing-Spider-Man-Poster-e1400297827296.png" width=215px height=auto title="" style="margin-left: 26px;" ></a>
 
 <a href="http://midnightjabber.com/movies/truman-show-1998/"><img class = "grow glow" src="http://midnightjabber.com/wp-content/uploads/2014/06/The-Truman-Show-1998.jpg" width=215px height=auto title="" style="margin-left: 26px;" ></a>
 
 <a href="http://midnightjabber.com/movies/the-usual-suspects-1995/"><img class = "grow glow" src="http://midnightjabber.com/wp-content/uploads/2014/07/The-Usual-Suspects-Poster.jpg" width=215px height=auto title="" style="margin-left: 26px;" ></a>
 
+<a href="http://midnightjabber.com/movies/warrior-2011/"><img class = "grow glow" src="http://midnightjabber.com/wp-content/uploads/2014/07/Warrior-2011.jpg" width=215px height=auto title="" style="margin-left: 26px;" ></a>
+
 <br>
 
 <!--Text Area-->
 <font face="Yanone Kaffeesatz Regular" color="black" size="6">
-<div style="width:215px; height:150px; margin-left: 10px; margin-top:15px; float: left; position:relative;" ><a href="http://midnightjabber.com/movies/amazing-spiderman-2-2014/"><font color="black">Spiderman (2014)</font></a></div>
+<div style="width:215px; height:150px; margin-left: 10px; margin-top:15px; float: left; position:relative;" ><a href="http://midnightjabber.com/movies/terminator-2-judgement-day/"><font color="black">Terminator 2 : Judgement Day (1991)</font></a></div>
 
-<div style="width:215px; height:150px; margin-left: 30px; margin-top:15px; float: left; position:relative;" ><a href="http://midnightjabber.com/movies/terminator-2-judgement-day/"><font color="black">Terminator 2 : Judgement Day (1991)</font></a></div>
+<div style="width:215px; height:150px; margin-left: 30px; margin-top:15px; float: left; position:relative;" ><a href="http://midnightjabber.com/movies/amazing-spiderman-2-2014/"><font color="black">The Amazing Spider-Man 2 (2014)</font></a></div>
 
 <div style="width:215px; height:150px; margin-left: 30px; margin-top:15px; float: left; position:relative;" ><a href="http://midnightjabber.com/movies/truman-show-1998/"><font color="black">The Truman Show (1998)</font></a></div>
 
 <div style="width:215px; height:150px; margin-left: 30px; margin-top:15px; float: left; position:relative;" ><a href="http://midnightjabber.com/movies/the-usual-suspects-1995/"><font color="black">The Usual Suspects (1995)</font></a></div>
+
+<div style="width:215px; height:150px; margin-left: 30px; margin-top:15px; float: left; position:relative;" ><a href="http://midnightjabber.com/movies/warrior-2011/"><font color="black">Warrior (2011)</font></a></div>
 
 </font>
 </body>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script type="text/javascript">
+
+var cntr = 0;
+function yHandler()
+{
+
+// Watch video for line by line explanation of the code
+// http://www.youtube.com/watch?v=eziREnZPml4
+
+ var wrap = document.getElementById('wrap');
+var str = ''; 
+var contentHeight = wrap.offsetHeight;
+var yOffset = window.pageYOffset; 
+var y = yOffset + window.innerHeight;
+var content = 1;
+if(y >= contentHeight && cntr<0)
+{ 
+
+// Ajax call to get more dynamic data goes here 
+
+}
+
+var status = document.getElementById('status');
+status.innerHTML = contentHeight+" | "+y+" | cntr="+cntr;
+}
+window.onscroll = yHandler;
+
+</script>
+<style type="text/css">
+
+/*Class Grow*/
+.grow {
+display: inline-block;
+-webkit-transition-duration: 0.5s;
+transition-duration: 0.5s;
+-webkit-transition-property: transform;
+transition-property: transform;
+-webkit-transform: translateZ(0);
+transform: translateZ(0);
+box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+/*Grow Hover Code*/
+.grow:hover, .grow:focus, .grow:active {
+-webkit-transform: scale(1.1);
+transform: scale(1.1);
+}
+
+/*Class Glow*/
+.glow {
+display: inline-block;
+-webkit-transition-duration: 0.5s;
+transition-duration: 0.5s;
+-webkit-transition-property: box-shadow;
+transition-property: box-shadow;
+-webkit-transform: translateZ(0);
+transform: translateZ(0);
+}
+
+/*Glow Hover Code*/
+.glow:hover, .glow:focus, .glow:active {
+ box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+div#status{position:fixed; font-size:24px;}
+div#wrap{width:1400px; margin:0px auto;}
+div.newData{ background:#FFF; margin:10px 0px;}
+</style>
+</head>
+<body>
+<div id="status">0 | 0</div>
+<div id="wrap">
+<!--Image Area-->
+<a href="http://midnightjabber.com/movies/warrior-2011/"><img class = "grow glow" src="http://midnightjabber.com/wp-content/uploads/2014/07/Warrior-2011.jpg" width=215px height=auto title="" style="margin-left: 5px;" ></a>
+
+<a href="http://midnightjabber.com/movies/truman-show-1998/"><img class = "grow glow" src="http://midnightjabber.com/wp-content/uploads/2014/06/The-Truman-Show-1998.jpg" width=215px height=auto title="" style="margin-left: 26px;" ></a>
+
+<a href="http://midnightjabber.com/movies/terminator-2-judgement-day/"><img class = "grow glow" src="http://midnightjabber.com/wp-content/uploads/2014/06/Terminator-2-Judgement-Day.jpg" width=215px height=auto title="" style="margin-left: 26px;" ></a>
+
+<br>
+
+<!--Text Area-->
+<font face="Yanone Kaffeesatz Regular" color="black" size="6">
+<div style="width:215px; height:150px; margin-left: 10px; margin-top:15px; float: left; position:relative;" ><a href="http://midnightjabber.com/movies/warrior-2011/"><font color="black">Warrior (2011)</font></a></div>
+
+<div style="width:215px; height:150px; margin-left: 30px; margin-top:15px; float: left; position:relative;" ><a href="http://midnightjabber.com/movies/truman-show-1998/"><font color="black">The Truman Show (1998)</font></a></div>
+
+<div style="width:215px; height:150px; margin-left: 30px; margin-top:15px; float: left; position:relative;" ><a href="http://midnightjabber.com/movies/terminator-2-judgement-day/"><font color="black">Terminator 2 : Judgement Day (1991)</font></a></div>
+
+</font>
+</body>
+</html>
+

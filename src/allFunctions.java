@@ -20,6 +20,7 @@ public class allFunctions implements Serializable
 	ArrayList<Integer> releaseDates = new ArrayList<Integer>();
 	ArrayList<String> imageURLs = new ArrayList<String>();
 	ArrayList<String> imageHREFs = new ArrayList<String>();
+	ArrayList<String> genres = new ArrayList<String>();
 
 	// Awards Variables
 	ArrayList<String> awards = new ArrayList<String>();
@@ -30,6 +31,8 @@ public class allFunctions implements Serializable
 	ArrayList<String> authorsBank = new ArrayList<String>();
 	ArrayList<String> authorItem = new ArrayList<String>();
 
+	//Genre Variables
+	ArrayList<String> genreBank = new ArrayList<String>();
 	
 	//Random Variables
 	String movieWhosAwardsWereJustGenerated;
@@ -46,10 +49,16 @@ public class allFunctions implements Serializable
 		oos.writeObject(releaseDates);
 		oos.writeObject(imageURLs);
 		oos.writeObject(imageHREFs);
+				
 		oos.writeObject(IMDBawardsPageURLs);
 		oos.writeObject(awardsBank);
+		
 		oos.writeObject(authorsBank);
 		oos.writeObject(authorItem);
+		
+		oos.writeObject(genres);
+		oos.writeObject(genreBank);
+		
 		oos.close();
 
 	}
@@ -117,10 +126,11 @@ public class allFunctions implements Serializable
 		System.out.println("\n\n ------------Movie Selected to Be Deleted------------");
 		System.out.println("\n 1. Movie Name: " + movieNames.get(i));
 		System.out.println("\n 2. Release Date: " + releaseDates.get(i));
-		System.out.println("\n 3. Author: " + authorItem.get(i));
-		System.out.println("\n 4. Image URL: " + imageURLs.get(i));
-		System.out.println("\n 5. Image HREF: " + imageHREFs.get(i));
-		System.out.println("\n 6. IMDB Awards URL: " + IMDBawardsPageURLs.get(i));
+		System.out.println("\n 3. Genre: " + genres.get(i));
+		System.out.println("\n 4. Author: " + authorItem.get(i));
+		System.out.println("\n 5. Image URL: " + imageURLs.get(i));
+		System.out.println("\n 6. Image HREF: " + imageHREFs.get(i));
+		System.out.println("\n 7. IMDB Awards URL: " + IMDBawardsPageURLs.get(i));
 
 		System.out.println("\nAre you sure you want to delete this movie? (y/n)");
 		temp = br.readLine();
@@ -129,6 +139,7 @@ public class allFunctions implements Serializable
 		{
 			movieNames.remove(i);
 			releaseDates.remove(i);
+			genres.remove(i);
 			authorItem.remove(i);
 			imageURLs.remove(i);
 			imageHREFs.remove(i);
@@ -175,10 +186,11 @@ public class allFunctions implements Serializable
 					System.out.print("\n" + cntr + ") ");
 					System.out.println("\n 1. Movie Name: " + movieNames.get(i));
 					System.out.println("\n 2. Release Date: " + releaseDates.get(i));
-					System.out.println("\n 3. Author: " + authorItem.get(i));
-					System.out.println("\n 4. Image URL: " + imageURLs.get(i));
-					System.out.println("\n 5. Image HREF: " + imageHREFs.get(i));
-					System.out.println("\n 6. IMDB Awards URL: " + IMDBawardsPageURLs.get(i));
+					System.out.println("\n 3. Genre: " + genres.get(i));
+					System.out.println("\n 4. Author: " + authorItem.get(i));
+					System.out.println("\n 5. Image URL: " + imageURLs.get(i));
+					System.out.println("\n 6. Image HREF: " + imageHREFs.get(i));
+					System.out.println("\n 7. IMDB Awards URL: " + IMDBawardsPageURLs.get(i));
 
 					flg = 1;
 
@@ -268,11 +280,12 @@ public class allFunctions implements Serializable
 		System.out.println("\n\n ------------Movie Selected to Be Edited------------");
 		System.out.println("\n 1. Movie Name: " + movieNames.get(i));
 		System.out.println("\n 2. Release Date: " + releaseDates.get(i));
-		System.out.println("\n 3. Author: " + authorItem.get(i));
-		System.out.println("\n 4. Image URL: " + imageURLs.get(i));
-		System.out.println("\n 5. Image HREF: " + imageHREFs.get(i));
-		System.out.println("\n 6. IMDB Awards URL: " + IMDBawardsPageURLs.get(i));
-		System.out.println("\n 7. Exit");
+		System.out.println("\n 3. Genre: " + genres.get(i));
+		System.out.println("\n 4. Author: " + authorItem.get(i));
+		System.out.println("\n 5. Image URL: " + imageURLs.get(i));
+		System.out.println("\n 6. Image HREF: " + imageHREFs.get(i));
+		System.out.println("\n 7. IMDB Awards URL: " + IMDBawardsPageURLs.get(i));
+		System.out.println("\n 8. Exit");
 
 		System.out.println("\n What do you want to edit?\n");
 		n = Integer.parseInt(br.readLine());
@@ -324,9 +337,17 @@ public class allFunctions implements Serializable
 			System.out.println("\nSuccessfully Edited!");
 		}
 
+		else if(n == 7)
+		{
+			System.out.println("\nEnter new Genres: ");
+			temp = br.readLine();
+			genres.set(i, temp);
+			System.out.println("\nSuccessfully Edited!");
+		}
+		
 		else
 		{
-
+			
 		}
 
 	}
@@ -346,11 +367,16 @@ public class allFunctions implements Serializable
 		releaseDates = (ArrayList<Integer>) in.readObject();
 		imageURLs = (ArrayList<String>) in.readObject();
 		imageHREFs = (ArrayList<String>) in.readObject();
+		
 		IMDBawardsPageURLs = (ArrayList<String>) in.readObject();
 		awardsBank = (ArrayList<awardBank>) in.readObject();
+		
 		authorsBank = (ArrayList<String>) in.readObject();
 		authorItem = (ArrayList<String>) in.readObject();
 
+		genres = (ArrayList<String>) in.readObject();
+		genreBank = (ArrayList<String>) in.readObject();
+		
 		in.close();
 		fileIn.close();
 
@@ -359,7 +385,7 @@ public class allFunctions implements Serializable
 	public void getMovie() throws IOException
 	{
 
-		String year, name, date, imageURL, imageHREF, imdbURL, author;
+		String year, name, date, imageURL, imageHREF, imdbURL, author, genre;
 		int intyear;
 
 		InputStreamReader rd = new InputStreamReader(System.in);
@@ -379,6 +405,10 @@ public class allFunctions implements Serializable
 		name = name + " (" + year + ")"; // Adding year to the name
 
 		movieNames.add(name); // Finally adding the moviename
+		
+		System.out.println("\nEnter the Genres of this movie:  ");
+		genre = br.readLine();
+		genres.add(genre);		
 
 		System.out.println("\nEnter the Name of this articles Author:  ");
 		author = br.readLine();
@@ -399,6 +429,7 @@ public class allFunctions implements Serializable
 		System.out.println("\nYou have entered: \n");
 		System.out.println("Movie:  " + name);
 		System.out.println("Date:  " + date);
+		System.out.println("Genres: " + genre);
 		System.out.println("Auhtor:  " + author);
 		System.out.println("Poster URL:  " + imageURL);
 		System.out.println("HREF:  " + imageHREF);
@@ -424,6 +455,10 @@ public class allFunctions implements Serializable
 					temp = movieNames.get(j);
 					movieNames.set(j, movieNames.get(j + 1));
 					movieNames.set(j + 1, temp);
+					
+					temp = genres.get(j);
+					genres.set(j, genres.get(j + 1));
+					genres.set(j + 1, temp);
 
 					temp = authorItem.get(j);
 					authorItem.set(j, authorItem.get(j + 1));
@@ -464,6 +499,10 @@ public class allFunctions implements Serializable
 					temp = movieNames.get(j);
 					movieNames.set(j, movieNames.get(j + 1));
 					movieNames.set(j + 1, temp);
+					
+					temp = genres.get(j);
+					genres.set(j, genres.get(j + 1));
+					genres.set(j + 1, temp);
 
 					temp = authorItem.get(j);
 					authorItem.set(j, authorItem.get(j + 1));
@@ -512,9 +551,10 @@ public class allFunctions implements Serializable
 		InputStreamReader rd = new InputStreamReader(System.in);
 		BufferedReader br = new BufferedReader(rd);
 
-		int i, largestNameSize, largestAuthorNameSize, largestURLSize, largestHREFSize, j;
+		int i, largestNameSize, largestGenreSize, largestAuthorNameSize, largestURLSize, largestHREFSize, j;
 
 		largestNameSize = findLargest(movieNames);
+		largestGenreSize = findLargest(genres);
 		largestAuthorNameSize = findLargest(authorItem);
 		largestURLSize = findLargest(imageURLs);
 		largestHREFSize = findLargest(imageHREFs);
@@ -531,6 +571,12 @@ public class allFunctions implements Serializable
 
 			System.out.print(releaseDates.get(i) + " ");
 
+			System.out.print(genres.get(i));
+			for(j = 0; j <= largestGenreSize - genres.get(i).length(); j++)
+			{
+				System.out.print(" ");
+			}
+			
 			System.out.print(authorItem.get(i));
 			for(j = 0; j <= largestAuthorNameSize - authorItem.get(i).length(); j++)
 			{
@@ -1167,6 +1213,11 @@ public class allFunctions implements Serializable
 
 	}
 
+	
+	
+	
+	//Award Functions
+	
 	public void retrieveAwards() throws IOException
 	{
 		awards.clear();
@@ -2201,7 +2252,11 @@ public class allFunctions implements Serializable
 
 	}
 
-	public void addNewAuthor() throws IOException
+	
+	
+	//Author Functions
+	
+	public void addNewAuthorToAuthorBank() throws IOException
 	{
 		System.out.println("\n");
 
@@ -2356,6 +2411,7 @@ public class allFunctions implements Serializable
 					System.out.print("\n" + cntr + ") ");
 					System.out.println("\n  1. Movie Name: " + movieNames.get(i));
 					System.out.println("\n  2. Release Date: " + releaseDates.get(i));
+					System.out.println("\n  2. Genre: " + genres.get(i));
 					System.out.println("\n  3. Image URL: " + imageURLs.get(i));
 					System.out.println("\n  4. Image HREF: " + imageHREFs.get(i));
 					System.out.println("\n  5. IMDB Awards URL: " + IMDBawardsPageURLs.get(i));
@@ -2611,7 +2667,7 @@ public class allFunctions implements Serializable
 		int numberOfDivisions;
 		int j = 0, k = 0;
 
-		String fileName = "./AuthorPageFile/"+authorName + "sPage.txt";
+		String fileName = "./AuthorPageFiles/"+authorName + "sPage.txt";
 		TextIO.writeFile(fileName);
 
 		// ****************************************************
@@ -2906,4 +2962,927 @@ public class allFunctions implements Serializable
 	}
 
 	
+	
+	//Genre Functions
+	
+	public void addNewGenreToGenreBank()throws IOException
+	{
+		System.out.println("\n");
+
+		InputStreamReader rd = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(rd);
+
+		String genre;
+
+		System.out.println("Enter the New Genre: ");
+		genre = br.readLine();
+
+		genreBank.add(genre);
+	}
+
+	public ArrayList<Integer> findAGenre()throws IOException
+	{
+		System.out.println("                                      Searching For A Genre                                      ");
+
+		InputStreamReader rd = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(rd);
+
+		ArrayList<Integer> indexes = new ArrayList<Integer>();
+
+		String searchString, subString;
+		int flg = 0, len, i, j, k, cntr = 0;
+		char ch;
+
+		System.out.println("Enter The Genre You Want To Search For: \n");
+		searchString = br.readLine();
+
+		len = searchString.length();
+
+		for(i = 0; i < genreBank.size(); i++)
+		{
+
+			for(k = 0, j = len; j <= genreBank.get(i).length(); k++, j++)
+			{
+				subString = genreBank.get(i).substring(k, j);
+
+				if(searchString.equalsIgnoreCase(subString))
+				{
+					cntr = cntr + 1;
+					indexes.add(i);
+
+					System.out.print("\n" + cntr + ") " + genreBank.get(i));
+
+					flg = 1;
+
+					break;
+				}
+			}
+
+		}
+		if(flg == 0 || genreBank.isEmpty())
+		{
+			System.out.println("\n Sorry, Couldn't Find The Genre You Were Looking For");
+		}
+
+		System.out.println("\n\nPress 0 Key to Continue...\n");
+		while (true)
+		{
+			ch = (char) br.read();
+			if(ch == '0')
+				return indexes;
+		}
+	}
+		
+	public ArrayList<Integer> findAMovieByGenre() throws IOException
+	{
+
+		InputStreamReader rd = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(rd);
+
+		ArrayList<Integer> idx = new ArrayList<Integer>();
+
+		idx = findAGenre();
+
+		String temp;
+		int terminal, i, n = 0, m = 0;
+
+		if(idx.size() == 1)
+		{
+			i = idx.get(0);
+		}
+
+		else if(idx.size() == 0)
+		{
+			char tmp;
+			System.out.println("No Genre with that Name Found. Do you want to try again? (y/n)");
+			tmp = (char) br.read();
+			if(tmp == 'y')
+			{
+				findAMovieByGenre();
+
+				/*
+				 * 
+				 * 
+				 * Remember to change the above function call to the function
+				 * you're copying this code to
+				 */
+				return null;
+			}
+			else
+			{
+				return null;
+			}
+
+		}
+
+		else
+		{
+
+			do
+			{
+				if(m == 1)
+				{
+					System.out.println("\nInavalid Choice, Enter Again: \n");
+				}
+
+				System.out.println("Enter a choice: \n");
+				n = Integer.parseInt(br.readLine());
+				m = 1;
+			}
+			while (n > idx.size() || n < 0);
+
+			i = idx.get(n - 1);
+		}
+
+		ArrayList<Integer> indexes = new ArrayList<Integer>();
+
+		String searchString, subString;
+		int flg = 0, len, j, k, cntr = 0;
+		char ch;
+
+		searchString = genreBank.get(i);
+
+		len = searchString.length();
+
+		for(i = 0; i < genres.size(); i++)
+		{
+
+			for(k = 0, j = len; j <= genres.get(i).length(); k++, j++)
+			{
+				subString = genres.get(i).substring(k, j);
+
+				if(searchString.equalsIgnoreCase(subString))
+				{
+					cntr = cntr + 1;
+					indexes.add(i);
+
+					System.out.print("\n" + cntr + ") ");
+					System.out.println("\n  1. Movie Name: " + movieNames.get(i));
+					System.out.println("\n  2. Release Date: " + releaseDates.get(i));
+					System.out.println("\n  3. Genre: " + genres.get(i));
+					System.out.println("\n  4. Image URL: " + imageURLs.get(i));
+					System.out.println("\n  5. Image HREF: " + imageHREFs.get(i));
+					System.out.println("\n  6. IMDB Awards URL: " + IMDBawardsPageURLs.get(i));
+					flg = 1;
+
+					break;
+				}
+			}
+
+		}
+		if(flg == 0 || genres.isEmpty())
+		{
+			System.out.println("\n Sorry, Couldn't Find The Genre You Were Looking For");
+		}
+
+		System.out.println("\nPress 0 Key to Continue...\n");
+		while (true)
+		{
+			ch = (char) br.read();
+			if(ch == '0')
+				return indexes;
+		}
+
+	}
+	
+	
+	public ArrayList<Integer> findAGenre(String searchedString2)throws IOException
+	{
+		System.out.println("                                      Searching For A Genre                                      ");
+
+		InputStreamReader rd = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(rd);
+
+		ArrayList<Integer> indexes = new ArrayList<Integer>();
+
+		String searchString, subString;
+		int flg = 0, len, i, j, k, cntr = 0;
+		char ch;
+		
+		//Different implementation from the standard method
+		searchString = searchedString2;
+
+		len = searchString.length();
+
+		for(i = 0; i < genreBank.size(); i++)
+		{
+
+			for(k = 0, j = len; j <= genreBank.get(i).length(); k++, j++)
+			{
+				subString = genreBank.get(i).substring(k, j);
+
+				if(searchString.equalsIgnoreCase(subString))
+				{
+					cntr = cntr + 1;
+					indexes.add(i);
+
+					System.out.print("\n" + cntr + ") " + genreBank.get(i));
+
+					flg = 1;
+
+					break;
+				}
+			}
+
+		}
+		if(flg == 0 || genreBank.isEmpty())
+		{
+			System.out.println("\n Sorry, Couldn't Find The Genre You Were Looking For");
+		}
+
+		System.out.println("\n\nPress 0 Key to Continue...\n");
+		while (true)
+		{
+			ch = (char) br.read();
+			if(ch == '0')
+				return indexes;
+		}
+	}
+		
+	public ArrayList<Integer> findAMovieByGenre(String searchedString) throws IOException
+	{
+
+		InputStreamReader rd = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(rd);
+
+		ArrayList<Integer> idx = new ArrayList<Integer>();
+
+		idx = findAGenre(searchedString);
+
+		String temp;
+		int terminal, i, n = 0, m = 0;
+
+		if(idx.size() == 1)
+		{
+			i = idx.get(0);
+		}
+
+		else if(idx.size() == 0)
+		{
+			char tmp;
+			System.out.println("No Genre with that Name Found. Do you want to try again? (y/n)");
+			tmp = (char) br.read();
+			if(tmp == 'y')
+			{
+				findAMovieByGenre();
+
+				/*
+				 * 
+				 * 
+				 * Remember to change the above function call to the function
+				 * you're copying this code to
+				 */
+				return null;
+			}
+			else
+			{
+				return null;
+			}
+
+		}
+
+		else
+		{
+
+			do
+			{
+				if(m == 1)
+				{
+					System.out.println("\nInavalid Choice, Enter Again: \n");
+				}
+
+				System.out.println("Enter a choice: \n");
+				n = Integer.parseInt(br.readLine());
+				m = 1;
+			}
+			while (n > idx.size() || n < 0);
+
+			i = idx.get(n - 1);
+		}
+
+		ArrayList<Integer> indexes = new ArrayList<Integer>();
+
+		String searchString, subString;
+		int flg = 0, len, j, k, cntr = 0;
+		char ch;
+
+		searchString = genreBank.get(i);
+
+		len = searchString.length();
+
+		for(i = 0; i < genres.size(); i++)
+		{
+
+			for(k = 0, j = len; j <= genres.get(i).length(); k++, j++)
+			{
+				subString = genres.get(i).substring(k, j);
+
+				if(searchString.equalsIgnoreCase(subString))
+				{
+					cntr = cntr + 1;
+					indexes.add(i);
+
+					System.out.print("\n" + cntr + ") ");
+					System.out.println("\n  1. Movie Name: " + movieNames.get(i));
+					System.out.println("\n  2. Release Date: " + releaseDates.get(i));
+					System.out.println("\n  3. Genre: " + genres.get(i));
+					System.out.println("\n  4. Image URL: " + imageURLs.get(i));
+					System.out.println("\n  5. Image HREF: " + imageHREFs.get(i));
+					System.out.println("\n  6. IMDB Awards URL: " + IMDBawardsPageURLs.get(i));
+					flg = 1;
+
+					break;
+				}
+			}
+
+		}
+		if(flg == 0 || genres.isEmpty())
+		{
+			System.out.println("\n Sorry, Couldn't Find The Genre You Were Looking For");
+		}
+
+		System.out.println("\nPress 0 Key to Continue...\n");
+		while (true)
+		{
+			ch = (char) br.read();
+			if(ch == '0')
+				return indexes;
+		}
+
+	}
+	
+	
+	public void editGenreBank() throws NumberFormatException, IOException
+	{
+		InputStreamReader rd = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(rd);
+
+		ArrayList<Integer> idx = new ArrayList<Integer>();
+
+		idx = findAGenre();
+
+		char ch;
+
+		String temp;
+		int terminal, i, n = 0, m = 0;
+
+		if(idx.size() == 1)
+		{
+			i = idx.get(0);
+		}
+
+		else if(idx.size() == 0)
+		{
+			char tmp;
+			System.out.println("No Genre with that Name Found. Do you want to try again? (y/n)");
+			tmp = (char) br.read();
+			if(tmp == 'y')
+			{
+				editGenreBank();
+
+				/*
+				 * 
+				 * 
+				 * Remember to change the above function call to the function
+				 * you're copying this code to
+				 */
+				return;
+			}
+			else
+			{
+				return;
+			}
+
+		}
+
+		else
+		{
+
+			do
+			{
+				if(m == 1)
+				{
+					System.out.println("\nInavalid Choice, Enter Again: \n");
+				}
+
+				System.out.println("Enter a choice: \n");
+				n = Integer.parseInt(br.readLine());
+				m = 1;
+			}
+			while (n > idx.size() || n < 0);
+
+			i = idx.get(n - 1);
+		}
+
+		System.out.println("\n\n ------------Genre Selected to Be Edited------------");
+		System.out.println("\n Genre Name: " + genreBank.get(i));
+
+		System.out.println("\n\n Are you Sure You want to edit this Genre? (y/n)");
+
+		ch = (char) br.read();
+
+		if(ch == 'y')
+		{
+			System.out.println("\nEnter New Genre: ");
+			temp = br.readLine();
+
+			genreBank.set(i, temp);
+		}
+
+		else
+		{
+			return;
+		}
+	}
+	
+	public void deleteGenreFromGenreBank() throws NumberFormatException, IOException
+	{
+		InputStreamReader rd = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(rd);
+
+		ArrayList<Integer> idx = new ArrayList<Integer>();
+
+		idx = findAGenre();
+
+		char ch;
+
+		String temp;
+		int terminal, i, n = 0, m = 0;
+
+		if(idx.size() == 1)
+		{
+			i = idx.get(0);
+		}
+
+		else if(idx.size() == 0)
+		{
+			char tmp;
+			System.out.println("No Genre with that Name Found. Do you want to try again? (y/n)");
+			tmp = (char) br.read();
+			if(tmp == 'y')
+			{
+				editGenreBank();
+
+				/*
+				 * 
+				 * 
+				 * Remember to change the above function call to the function
+				 * you're copying this code to
+				 */
+				return;
+			}
+			else
+			{
+				return;
+			}
+
+		}
+
+		else
+		{
+
+			do
+			{
+				if(m == 1)
+				{
+					System.out.println("\nInavalid Choice, Enter Again: \n");
+				}
+
+				System.out.println("Enter a choice: \n");
+				n = Integer.parseInt(br.readLine());
+				m = 1;
+			}
+			while (n > idx.size() || n < 0);
+
+			i = idx.get(n - 1);
+		}
+
+		System.out.println("\n\n ------------Genre Selected to Be Deleted------------");
+		System.out.println("\n Genre Name: " + genreBank.get(i));
+
+		System.out.println("\n\n Are you Sure You want to edit this Genre? (y/n)");
+
+		ch = (char) br.read();
+
+		if(ch == 'y')
+		{
+			genreBank.remove(i);
+		}
+
+		else
+		{
+			return;
+		}
+	}
+
+	public void displayGenreBank() throws IOException
+	{
+		System.out.println("------------------------- Genre Bank -------------------------");
+
+		InputStreamReader rd = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(rd);
+
+		int i;
+		char ch;
+
+		for(i = 0; i < genreBank.size(); i++)
+		{
+			System.out.println("\n" + (i + 1) + ") " + genreBank.get(i));
+		}
+
+		System.out.println("\n\nPress 0 Key to Continue...\n");
+		while (true)
+		{
+			ch = (char) br.read();
+			if(ch == '0')
+				return;
+		}
+	}
+	
+	public void generateGenrePage() throws IOException
+	{
+		InputStreamReader rd=new InputStreamReader(System.in);
+		BufferedReader br=new BufferedReader(rd);
+		String searchString="", newsearchString="";
+		
+		System.out.println("\nEnter Search String for the Genre whose page you want to generate: \n");
+		searchString=br.readLine();
+		
+		
+		ArrayList<Integer> genreWorks = new ArrayList<Integer>();
+
+		ArrayList<String> genreWorksImageURLs = new ArrayList<String>();
+		ArrayList<String> genreWorksImageHREFs = new ArrayList<String>();
+		ArrayList<String> genreMovies = new ArrayList<String>();
+
+		String genreName;
+		String arr[];
+
+		int i;
+
+		genreWorks = findAMovieByGenre(searchString);
+
+		genreName = genres.get(genreWorks.get(0));
+
+		arr = genreName.split(",");
+
+		//System.out.println("Split size: "+arr.length);
+		
+		
+		//	System.out.println("Search String: "+searchString);
+		
+		String newSearchString="";
+		ArrayList<String> convertingCases=new ArrayList<String>();
+		
+		for(int var=1;var<=searchString.length();var++)
+		{
+			if(var==1)
+			{
+				convertingCases.add(searchString.substring(var-1, var).toUpperCase());
+			}
+			else
+			{
+				convertingCases.add(searchString.substring(var-1, var).toLowerCase());
+			}
+		}
+		
+		for(int var=0;var<convertingCases.size();var++)
+		{
+			if(var==0)
+			{
+				newSearchString=convertingCases.get(var);
+			}
+			
+			else
+			{
+				newSearchString=newSearchString+convertingCases.get(var);
+			}
+			
+		}
+		
+		/*
+		System.out.println(searchString);
+		System.out.println(newSearchString);
+		*/
+		
+		
+		for(i = 0; i < arr.length; i++)
+		{
+			if(arr[i].contains(newSearchString))
+			{
+				genreName = arr[i];
+			}
+		}
+
+		System.out.println("genre name: "+genreName);
+		
+		for(i = 0; i < genreWorks.size(); i++)
+		{
+			genreMovies.add(movieNames.get(genreWorks.get(i)));
+			genreWorksImageURLs.add(imageURLs.get(genreWorks.get(i)));
+			genreWorksImageHREFs.add(imageHREFs.get(genreWorks.get(i)));
+		}
+
+		// Code generation
+		i = 0;
+
+		int numberOfDivisions;
+		int j = 0, k = 0;
+
+		System.out.println("Genre Name extracted: "+genreName);
+		
+		String fileName = "./GenrePageFiles/"+genreName + "sPage.txt";
+		TextIO.writeFile(fileName);
+
+		// ****************************************************
+		TextIO.putln("<!DOCTYPE html>");
+		TextIO.putln("<html>");
+		TextIO.putln("<head>");
+
+		TextIO.putln("");
+
+		// Start of JavaScript
+		TextIO.putln("<script type=\"text/javascript\">");
+		TextIO.putln("");
+		TextIO.putln("var cntr = 0;");
+
+		TextIO.putln("function yHandler()");
+		TextIO.putln("{");
+
+		TextIO.putln("");
+		TextIO.putln("// Watch video for line by line explanation of the code");
+		TextIO.putln("// http://www.youtube.com/watch?v=eziREnZPml4");
+		TextIO.putln("\n var wrap = document.getElementById('wrap');");
+		TextIO.putln("var str = ''; "); // String Variable
+
+		TextIO.putln("var contentHeight = wrap.offsetHeight;");
+		TextIO.putln("var yOffset = window.pageYOffset; ");
+		TextIO.putln("var y = yOffset + window.innerHeight;");
+		TextIO.putln("var content = 1;");
+
+		String str = "";
+		int z, flg = 0;
+		numberOfDivisions = ((genreMovies.size()) / 25);
+
+		TextIO.putln("if(y >= contentHeight && cntr<" + numberOfDivisions + ")"); // checking
+																					// scroll
+																					// height
+		TextIO.putln("{ \n");
+		TextIO.putln("// Ajax call to get more dynamic data goes here \n");
+
+		// inside first if
+
+		// now going for content==1,2 etc.
+
+		for(z = 0; z < numberOfDivisions; z++)
+		{
+
+			if(flg == 0)
+			{
+				flg = 1;
+				TextIO.putln("");
+				TextIO.putln("if(content == " + (z + 1) + ")");
+				TextIO.putln("{ ");
+
+				TextIO.putln("cntr++; ");
+
+				for(i = ((z + 1) * 25); i < (((z + 1) * 25) + 25) && i < genreMovies.size(); i = i + 5)
+				{
+
+					/* Image Area */
+					for(j = i; j < i + 5 && j < (((z + 1) * 25) + 25) && j < genreMovies.size(); j++)
+					{
+						if(j % 5 == 0)
+						{
+							str += "<a href=\"" + genreWorksImageHREFs.get(j) + "\"><img class = \"grow glow\" src=\"" + genreWorksImageURLs.get(j) + "\" width=215px height=auto title=\"\" style=\"margin-left: 5px;\" ></a>";
+
+						}
+
+						else
+						{
+							str += "<a href=\"" + genreWorksImageHREFs.get(j) + "\"><img class = \"grow glow\" src=\"" + genreWorksImageURLs.get(j) + "\" width=215px height=auto title=\"\" style=\"margin-left: 26px;\" ></a>";
+
+						}
+					}
+
+					TextIO.putln("");
+
+					str += "<br><br>";
+
+					/* Text Area */
+					str += "<font face=\"Yanone Kaffeesatz Regular\" color=\"black\" size=\"6\">";
+					for(k = i; k < i + 5 && k < (((z + 1) * 25) + 25) && k < genreMovies.size(); k++)
+					{
+						if(k % 5 == 0)
+						{
+							str += "<div style=\"width:215px; height:150px; margin-left: 10px; margin-top:15px; float: left; position:relative;\" ><a href=\"" + genreWorksImageHREFs.get(k) + "\"><font color=\"black\">" + genreMovies.get(k) + "</font></a></div>";
+
+						}
+
+						else
+						{
+							str += "<div style=\"width:215px; height:150px; margin-left: 30px; margin-top:15px; float: left; position:relative;\" ><a href=\"" + genreWorksImageHREFs.get(k) + "\"><font color=\"black\">" + genreMovies.get(k) + "</font></a></div>";
+
+						}
+					}
+
+					str += "</font>";
+
+				}
+
+				TextIO.putln("\nstr='" + str + "'");
+
+				str = "";
+
+				TextIO.putln("wrap.innerHTML += '<div class=\"newData\">'+str+'</div>';");
+				TextIO.putln("content++;");
+				TextIO.putln("}");
+
+			}
+
+			if(flg == 1)
+			{
+
+				TextIO.putln("");
+				TextIO.putln("else if(content == " + (z + 1) + ")");
+				TextIO.putln("{ ");
+
+				TextIO.putln("cntr++; ");
+
+				for(i = ((z + 1) * 25); i < (((z + 1) * 25) + 25) && i < genreMovies.size(); i = i + 5)
+				{
+
+					/* Image Area */
+					for(j = i; j < i + 5 && j < (((z + 1) * 25) + 25) && j < genreMovies.size(); j++)
+					{
+						if(j % 5 == 0)
+						{
+							str += "<a href=\"" + genreWorksImageHREFs.get(j) + "\"><img class = \"grow glow\" src=\"" + genreWorksImageURLs.get(j) + "\" width=215px height=auto title=\"\" style=\"margin-left: 5px;\" ></a>";
+
+						}
+
+						else
+						{
+							str += "<a href=\"" + genreWorksImageHREFs.get(j) + "\"><img class = \"grow glow\" src=\"" + genreWorksImageURLs.get(j) + "\" width=215px height=auto title=\"\" style=\"margin-left: 26px;\" ></a>";
+
+						}
+					}
+
+					TextIO.putln("");
+
+					str += "<br><br>";
+
+					/* Text Area */
+					str += "<font face=\"Yanone Kaffeesatz Regular\" color=\"black\" size=\"6\">";
+					for(k = i; k < i + 5 && k < (((z + 1) * 25) + 25) && k < genreMovies.size(); k++)
+					{
+						if(k % 5 == 0)
+						{
+							str += "<div style=\"width:215px; height:150px; margin-left: 10px; margin-top:15px; float: left; position:relative;\" ><a href=\"" + genreWorksImageHREFs.get(k) + "\"><font color=\"black\">" + genreMovies.get(k) + "</font></a></div>";
+
+						}
+
+						else
+						{
+							str += "<div style=\"width:215px; height:150px; margin-left: 30px; margin-top:15px; float: left; position:relative;\" ><a href=\"" + genreWorksImageHREFs.get(k) + "\"><font color=\"black\">" + genreMovies.get(k) + "</font></a></div>";
+
+						}
+					}
+
+					str += "</font>";
+
+				}
+
+				TextIO.putln("\nstr='" + str + "'");
+
+				str = "";
+
+				TextIO.putln("wrap.innerHTML += '<div class=\"newData\">'+str+'</div>';");
+				TextIO.putln("content++;");
+				TextIO.putln("}");
+			}
+
+		}// End of numberOfDivisions For Loop
+
+		TextIO.putln("}");// end of first if ~ contentHeight
+
+		TextIO.putln("");
+		TextIO.putln("var status = document.getElementById('status');");
+		TextIO.putln("status.innerHTML = contentHeight+\" | \"+y+\" | cntr=\"+cntr;");
+		TextIO.putln("}");// End of yHandler
+		TextIO.putln("window.onscroll = yHandler;");
+		TextIO.putln("");
+		TextIO.putln("</script>");
+
+		TextIO.putln("<style type=\"text/css\">");
+		TextIO.putln("");
+
+		/* Class Grow */
+		TextIO.putln("/*Class Grow*/");
+		TextIO.putln(".grow {");
+		TextIO.putln("display: inline-block;");
+		TextIO.putln("-webkit-transition-duration: 0.5s;");
+		TextIO.putln("transition-duration: 0.5s;");
+		TextIO.putln("-webkit-transition-property: transform;");
+		TextIO.putln("transition-property: transform;");
+		TextIO.putln("-webkit-transform: translateZ(0);");
+		TextIO.putln("transform: translateZ(0);");
+		TextIO.putln("box-shadow: 0 0 1px rgba(0, 0, 0, 0);");
+		TextIO.putln("}");
+		TextIO.putln("");
+		// End of Grow
+
+		/* Grow Hover Code */
+		TextIO.putln("/*Grow Hover Code*/");
+		TextIO.putln(".grow:hover, .grow:focus, .grow:active {");
+		TextIO.putln("-webkit-transform: scale(1.1);");
+		TextIO.putln("transform: scale(1.1);");
+		TextIO.putln("}");
+		TextIO.putln("");
+		// End of Grow Hover
+
+		/* Class Glow */
+		TextIO.putln("/*Class Glow*/");
+		TextIO.putln(".glow {");
+		TextIO.putln("display: inline-block;");
+		TextIO.putln("-webkit-transition-duration: 0.5s;");
+		TextIO.putln("transition-duration: 0.5s;");
+		TextIO.putln("-webkit-transition-property: box-shadow;");
+		TextIO.putln("transition-property: box-shadow;");
+		TextIO.putln("-webkit-transform: translateZ(0);");
+		TextIO.putln("transform: translateZ(0);");
+		TextIO.putln("}");
+		TextIO.putln("");
+		// End of Glow
+
+		/* Glow Hover Code */
+		TextIO.putln("/*Glow Hover Code*/");
+		TextIO.putln(".glow:hover, .glow:focus, .glow:active {");
+		TextIO.putln(" box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);");
+		TextIO.putln("}");
+		TextIO.putln("");
+		// End of Glow Hover
+
+		TextIO.putln("div#status{position:fixed; font-size:24px;}");
+		TextIO.putln("div#wrap{width:1400px; margin:0px auto;}");
+
+		TextIO.putln("div.newData{ background:#FFF; margin:10px 0px;}");
+		TextIO.putln("</style>");
+		TextIO.putln("</head>");
+		TextIO.putln("<body>");
+
+		TextIO.putln("<div id=\"status\">0 | 0</div>");
+		TextIO.putln("<div id=\"wrap\">");
+
+		for(z = 0; z < 25 && z < genreMovies.size(); z = z + 5)
+		{
+
+			/* Image Area */
+			TextIO.putln("<!--Image Area-->");
+			for(j = z; j < z + 5 && j < genreMovies.size(); j++)
+			{
+				if(j % 5 == 0)
+				{
+					TextIO.putln("<a href=\"" + genreWorksImageHREFs.get(j) + "\"><img class = \"grow glow\" src=\"" + genreWorksImageURLs.get(j) + "\" width=215px height=auto title=\"\" style=\"margin-left: 5px;\" ></a>");
+					TextIO.putln("");
+				}
+
+				else
+				{
+					TextIO.putln("<a href=\"" + genreWorksImageHREFs.get(j) + "\"><img class = \"grow glow\" src=\"" + genreWorksImageURLs.get(j) + "\" width=215px height=auto title=\"\" style=\"margin-left: 26px;\" ></a>");
+					TextIO.putln("");
+				}
+			}
+
+			TextIO.putln("<br>");
+			TextIO.putln("");
+
+			/* Text Area */
+			TextIO.putln("<!--Text Area-->");
+			TextIO.putln("<font face=\"Yanone Kaffeesatz Regular\" color=\"black\" size=\"6\">");
+			for(k = z; k < z + 5 && k < genreMovies.size(); k++)
+			{
+				if(k % 5 == 0)
+				{
+					TextIO.putln("<div style=\"width:215px; height:150px; margin-left: 10px; margin-top:15px; float: left; position:relative;\" ><a href=\"" + genreWorksImageHREFs.get(k) + "\"><font color=\"black\">" + genreMovies.get(k) + "</font></a></div>");
+					TextIO.putln("");
+				}
+
+				else
+				{
+					TextIO.putln("<div style=\"width:215px; height:150px; margin-left: 30px; margin-top:15px; float: left; position:relative;\" ><a href=\"" + genreWorksImageHREFs.get(k) + "\"><font color=\"black\">" + genreMovies.get(k) + "</font></a></div>");
+					TextIO.putln("");
+				}
+			}
+
+			TextIO.putln("</font>");
+
+		}
+
+		TextIO.putln("</body>");
+		TextIO.putln("</html>");
+		TextIO.putln("");
+
+	}
+
 }
