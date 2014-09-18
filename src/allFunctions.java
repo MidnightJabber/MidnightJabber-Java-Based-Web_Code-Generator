@@ -1364,6 +1364,11 @@ public class allFunctions implements Serializable
 						personsofTD = individualTD.getElementsByTag("a");
 						noOfPersons = personsofTD.size();
 
+						if(noOfPersons==0)
+						{
+							awardPerson="";
+						}
+						
 						for(k = 0; k < noOfPersons; k++)
 						{
 							individualPerson = personsofTD.get(k);
@@ -1372,7 +1377,9 @@ public class allFunctions implements Serializable
 							{
 								if(!(individualPerson.text().equals("More")))
 								{
+									
 									awardPerson = individualPerson.text();
+								
 								}
 								
 							}
@@ -1381,13 +1388,16 @@ public class allFunctions implements Serializable
 							{
 								if(!(individualPerson.text().equals("More")))
 								{
+									
 									awardPerson = awardPerson + "|" + individualPerson.text();
+									
+									
 								}
 								
 							}
 						}
 
-						len2 = awardPerson.length();
+						//len2 = awardPerson.length();
 
 						awardDescription = individualTD.ownText().toString();
 						len1 = awardDescription.length();
