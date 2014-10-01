@@ -305,15 +305,25 @@ public class allFunctions implements Serializable
 			releaseDates.set(i, Integer.parseInt(temp));
 			System.out.println("\nSuccessfully Edited!");
 		}
-
+		
 		else if(n == 3)
+		{
+			System.out.println("\nEnter new Genres: ");
+			temp = br.readLine();
+			genres.set(i, temp);
+			System.out.println("\nSuccessfully Edited!");
+		}
+		
+
+		else if(n == 4)
 		{
 			System.out.println("\nEnter new Author name: ");
 			temp = br.readLine();
 			authorItem.set(i, temp);
 			System.out.println("\nSuccessfully Edited!");
 		}
-		else if(n == 4)
+		
+		else if(n == 5)
 		{
 			System.out.println("\nEnter new Image URL: ");
 			temp = br.readLine();
@@ -321,7 +331,7 @@ public class allFunctions implements Serializable
 			System.out.println("\nSuccessfully Edited!");
 		}
 
-		else if(n == 5)
+		else if(n == 6)
 		{
 			System.out.println("\nEnter new HREF: ");
 			temp = br.readLine();
@@ -329,7 +339,7 @@ public class allFunctions implements Serializable
 			System.out.println("\nSuccessfully Edited!");
 		}
 
-		else if(n == 6)
+		else if(n == 7)
 		{
 			System.out.println("\nEnter new IMDB URL: ");
 			temp = br.readLine();
@@ -337,13 +347,6 @@ public class allFunctions implements Serializable
 			System.out.println("\nSuccessfully Edited!");
 		}
 
-		else if(n == 7)
-		{
-			System.out.println("\nEnter new Genres: ");
-			temp = br.readLine();
-			genres.set(i, temp);
-			System.out.println("\nSuccessfully Edited!");
-		}
 		
 		else
 		{

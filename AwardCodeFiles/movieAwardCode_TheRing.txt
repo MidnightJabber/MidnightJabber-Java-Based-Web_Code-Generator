@@ -1,0 +1,214 @@
+<font face="Yanone Kaffeesatz Regular" size="6">Awards & Nominations:</font>
+<br><br>
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+/* http://ianlunn.github.io/Hover/# ( for hover effects by Ian Lunn) */
+/* Hover effects are on his Github. Each effect has a class in the hover.css file */
+/* GITHUB LINK: https://github.com/IanLunn/Hover */
+/* GROW CODE */
+.grow {
+display: inline-block;
+-webkit-transition-duration: 0.1s;
+transition-duration: 0.1s;
+-webkit-transition-property: transform;
+transition-property: transform;
+-webkit-transform: translateZ(0);
+transform: translateZ(0);
+}
+
+/* GROW HOVER CODE */
+.grow:hover, .grow:focus, .grow:active
+{
+-webkit-transform:  translateZ(0) scale(1.1);
+transform: translateZ(0) scale(1.1);
+}
+
+/** Description: Creates Text Box on Hover. The Decoration/Colors can be edited
+* Author: Code taken online (unknown)
+*/
+.tab
+{
+float: left;
+}
+
+.tabcontent{
+margin-top:1px;
+margin-left: -10px;
+position: absolute;
+padding:0px 0 0 10px;
+background: rgba(0,0,0,0.9);
+/* Safari 4-5, Chrome 1-9 */
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#1947A4), to(#4A7EBD));
+/* Safari 5.1, Chrome 10+ */
+background: -webkit-linear-gradient(top, #1947A4, #4A7EBD);
+/* Firefox 3.6+ */
+background: -moz-linear-gradient(top, #020202, #4A4A4A);
+/* IE 10 */
+background: -ms-linear-gradient(top, #020202, #4A4A4A);
+/* Opera 11.10+ */
+background: -o-linear-gradient(top, #020202, #4A4A4A);
+/*  border:1px solid #000; */
+border-radius: 12px ;
+height:150px;
+width: 250px;
+display:none;
+transition: all 1.2s;
+box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
+}
+
+.tab:hover > .tabcontent
+{
+display: block;
+}
+
+/** Description: Gap Animation code between rows of awards
+*Functionality/Usage: <div class="gap"> (includes a row of awards) </div>
+* Authors: Vishrut,Sukrit (www.midnightjabber.com)
+*/
+
+.gap:hover
+{
+
+margin-bottom:180px;
+transition: all 0.5s;
+}
+
+.lastgap:hover
+{
+margin-bottom:205px;
+transition: all 0.5s;
+}
+
+/* For Testing Purposes */
+.solid_border {
+border-style: dashed;
+}
+
+.scrollbar
+{
+margin-top:5px;
+height: 140px;
+width: 249px;
+overflow-y: auto;
+}
+
+.force-overflow
+{
+overflow-y: auto;
+}
+
+/*
+*  STYLE 1
+*/
+
+#style-1::-webkit-scrollbar-track
+{
+-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+border-radius: 12px;
+background: -webkit-linear-gradient(top, #1947A4, #4A7EBD);
+}
+
+#style-1::-webkit-scrollbar
+{
+border-radius: 12px;
+width: 8px;
+}
+
+#style-1::-webkit-scrollbar-thumb
+{
+border-radius: 12px;
+-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.5);
+background-color: #555;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="lastgap">
+<!-- *****************************Saturn Award,2003 *************************** -->
+<div class="tab" style=" margin-left: 10px;">
+<a href="http://midnightjabber.com/legend/"><img class =" grow " src="http://midnightjabber.com/wp-content/uploads/2014/07/Saturn-Award.png" style="height: 50px; width: auto;" title=""></a>
+<div class="tabcontent">
+<div class="scrollbar" id="style-1">
+<div class="force-overflow">
+<font size="4" color="#F7AD07"><b><u>SATURN AWARD 2003</u></b></font>
+
+<br>
+<img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Won.png" style="height: 12px; width: auto;" title="Won!"><font size="3"color="white" style="margin-left:5px;"><b><u>Best Horror Film</u></b></font>
+<br>
+<font size="2" color="white"></font>
+<br>
+<br>
+<img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Won.png" style="height: 12px; width: auto;" title="Won!"><font size="3"color="white" style="margin-left:5px;"><b><u>Best Actress</u></b></font>
+<br>
+<font size="2" color="white">Naomi Watts</font>
+<br>
+<br>
+<img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Lose.png" style="height: 12px; width: auto;" title="Nominated"><font size="3"color="white" style="margin-left:5px;"><b><u>Best Make-Up</u></b></font>
+<br>
+<font size="2" color="white">Rick Baker, Jean Ann Black, Bill Sturgeon</font>
+
+</div>
+</div>
+</div>
+</div>
+
+
+<!-- *****************************MTV Movie Award,2003 *************************** -->
+<div class="tab" style=" margin-left: 35px;">
+<a href="http://midnightjabber.com/legend/"><img class =" grow " src="http://midnightjabber.com/wp-content/uploads/2014/07/MTV-Movie-Award.png" style="height: 50px; width: auto;" title=""></a>
+<div class="tabcontent">
+<div class="scrollbar" id="style-1">
+<div class="force-overflow">
+<font size="4" color="#F7AD07"><b><u>MTV MOVIE AWARD 2003</u></b></font>
+
+<br>
+<img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Won.png" style="height: 12px; width: auto;" title="Won!"><font size="3"color="white" style="margin-left:5px;"><b><u>Best Villain</u></b></font>
+<br>
+<font size="2" color="white">Daveigh Chase</font>
+<br>
+<br>
+<img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Lose.png" style="height: 12px; width: auto;" title="Nominated"><font size="3"color="white" style="margin-left:5px;"><b><u>Best Movie</u></b></font>
+<br>
+<font size="2" color="white"></font>
+
+</div>
+</div>
+</div>
+</div>
+
+
+<!-- *****************************Golden Trailer,2003 *************************** -->
+<div class="tab" style=" margin-left: 50px;">
+<a href="http://midnightjabber.com/legend/"><img class =" grow " src="http://midnightjabber.com/wp-content/uploads/2014/09/Golden-Trailer-Award.png" style="height: 50px; width: auto;" title=""></a>
+<div class="tabcontent">
+<div class="scrollbar" id="style-1">
+<div class="force-overflow">
+<font size="4" color="#F7AD07"><b><u>GOLDEN TRAILER 2003</u></b></font>
+
+<br>
+<img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Won.png" style="height: 12px; width: auto;" title="Won!"><font size="3"color="white" style="margin-left:5px;"><b><u>Most Original</u></b></font>
+<br>
+<font size="2" color="white"></font>
+<br>
+<br>
+<img src="http://midnightjabber.com/wp-content/uploads/2014/07/Award-Won.png" style="height: 12px; width: auto;" title="Won!"><font size="3"color="white" style="margin-left:5px;"><b><u>Best Horror/Thriller</u></b></font>
+<br>
+<font size="2" color="white"></font>
+
+</div>
+</div>
+</div>
+</div>
+
+
+<!--Counter: 2  Offset: 3-->
+</div>
+</body>
+</html>

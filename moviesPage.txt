@@ -97,7 +97,7 @@ div.newData{ background:#FFF; margin:10px 0px;}
 
 <div style="width:215px; height:150px; margin-left: 30px; margin-top:15px; float: left; position:relative;" ><a href="http://midnightjabber.com/movies/frozen-2013/"><font color="black">Frozen (2013)</font></a></div>
 
-<div style="width:215px; height:150px; margin-left: 30px; margin-top:15px; float: left; position:relative;" ><a href="http://midnightjabber.com/movies/django-unchained-2012/"><font color="black">Django (2012)</font></a></div>
+<div style="width:215px; height:150px; margin-left: 30px; margin-top:15px; float: left; position:relative;" ><a href="http://midnightjabber.com/movies/django-unchained-2012/"><font color="black">Django Unchained (2012)</font></a></div>
 
 </font>
 <!--Image Area-->
@@ -109,7 +109,7 @@ div.newData{ background:#FFF; margin:10px 0px;}
 
 <a href="http://midnightjabber.com/movies/ratatouille-2007/"><img class = "grow glow" src="http://midnightjabber.com/wp-content/uploads/2014/07/Ratatouille-2007.jpg" width=215px height=auto title="" style="margin-left: 26px;" ></a>
 
-<a href="http://midnightjabber.com/movies/truman-show-1998/"><img class = "grow glow" src="http://midnightjabber.com/wp-content/uploads/2014/06/The-Truman-Show-1998.jpg" width=215px height=auto title="" style="margin-left: 26px;" ></a>
+<a href="http://midnightjabber.com/movies/the-ring-2002/"><img class = "grow glow" src="http://midnightjabber.com/wp-content/uploads/2014/09/The-Ring-Poster.jpg" width=215px height=auto title="" style="margin-left: 26px;" ></a>
 
 <br>
 
@@ -123,11 +123,15 @@ div.newData{ background:#FFF; margin:10px 0px;}
 
 <div style="width:215px; height:150px; margin-left: 30px; margin-top:15px; float: left; position:relative;" ><a href="http://midnightjabber.com/movies/ratatouille-2007/"><font color="black">Ratatouille (2007)</font></a></div>
 
-<div style="width:215px; height:150px; margin-left: 30px; margin-top:15px; float: left; position:relative;" ><a href="http://midnightjabber.com/movies/truman-show-1998/"><font color="black">The Truman Show (1998)</font></a></div>
+<div style="width:215px; height:150px; margin-left: 30px; margin-top:15px; float: left; position:relative;" ><a href="http://midnightjabber.com/movies/the-ring-2002/"><font color="black">The Ring (2002)</font></a></div>
 
 </font>
 <!--Image Area-->
-<a href="http://midnightjabber.com/movies/the-usual-suspects-1995/"><img class = "grow glow" src="http://midnightjabber.com/wp-content/uploads/2014/07/The-Usual-Suspects-Poster.jpg" width=215px height=auto title="" style="margin-left: 5px;" ></a>
+<a href="http://midnightjabber.com/movies/american-psycho-2000/"><img class = "grow glow" src="http://midnightjabber.com/wp-content/uploads/2014/10/American-Psycho-Poster.jpg" width=215px height=auto title="" style="margin-left: 5px;" ></a>
+
+<a href="http://midnightjabber.com/movies/truman-show-1998/"><img class = "grow glow" src="http://midnightjabber.com/wp-content/uploads/2014/06/The-Truman-Show-1998.jpg" width=215px height=auto title="" style="margin-left: 26px;" ></a>
+
+<a href="http://midnightjabber.com/movies/the-usual-suspects-1995/"><img class = "grow glow" src="http://midnightjabber.com/wp-content/uploads/2014/07/The-Usual-Suspects-Poster.jpg" width=215px height=auto title="" style="margin-left: 26px;" ></a>
 
 <a href="http://midnightjabber.com/movies/good-men-1992/"><img class = "grow glow" src="http://midnightjabber.com/wp-content/uploads/2014/09/A-Few-Good-Men-1992.jpg" width=215px height=auto title="" style="margin-left: 26px;" ></a>
 
@@ -137,7 +141,11 @@ div.newData{ background:#FFF; margin:10px 0px;}
 
 <!--Text Area-->
 <font face="Yanone Kaffeesatz Regular" color="black" size="6">
-<div style="width:215px; height:150px; margin-left: 10px; margin-top:15px; float: left; position:relative;" ><a href="http://midnightjabber.com/movies/the-usual-suspects-1995/"><font color="black">The Usual Suspects (1995)</font></a></div>
+<div style="width:215px; height:150px; margin-left: 10px; margin-top:15px; float: left; position:relative;" ><a href="http://midnightjabber.com/movies/american-psycho-2000/"><font color="black">American Psycho (2000)</font></a></div>
+
+<div style="width:215px; height:150px; margin-left: 30px; margin-top:15px; float: left; position:relative;" ><a href="http://midnightjabber.com/movies/truman-show-1998/"><font color="black">The Truman Show (1998)</font></a></div>
+
+<div style="width:215px; height:150px; margin-left: 30px; margin-top:15px; float: left; position:relative;" ><a href="http://midnightjabber.com/movies/the-usual-suspects-1995/"><font color="black">The Usual Suspects (1995)</font></a></div>
 
 <div style="width:215px; height:150px; margin-left: 30px; margin-top:15px; float: left; position:relative;" ><a href="http://midnightjabber.com/movies/good-men-1992/"><font color="black">A Few Good Men (1992)</font></a></div>
 
