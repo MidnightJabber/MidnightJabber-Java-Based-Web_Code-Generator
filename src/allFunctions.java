@@ -799,7 +799,7 @@ public class allFunctions implements Serializable
 
 		TextIO.putln("");
 		TextIO.putln("var status = document.getElementById('status');");
-		TextIO.putln("status.innerHTML = contentHeight+\" | \"+y+\" | cntr=\"+cntr;");
+		//TextIO.putln("status.innerHTML = contentHeight+\" | \"+y+\" | cntr=\"+cntr;"); 	//Div tester! prints the location of scroll bar.
 		TextIO.putln("}");// End of yHandler
 		TextIO.putln("window.onscroll = yHandler;");
 		TextIO.putln("");
@@ -862,7 +862,7 @@ public class allFunctions implements Serializable
 		TextIO.putln("</head>");
 		TextIO.putln("<body>");
 
-		TextIO.putln("<div id=\"status\">0 | 0</div>");
+		//TextIO.putln("<div id=\"status\">0 | 0</div>");
 		TextIO.putln("<div id=\"wrap\">");
 
 		for(z = 0; z < 25 && z < movieNames.size(); z = z + 5)
@@ -1099,7 +1099,7 @@ public class allFunctions implements Serializable
 
 		TextIO.putln("");
 		TextIO.putln("var status = document.getElementById('status');");
-		TextIO.putln("status.innerHTML = contentHeight+\" | \"+y+\" | cntr=\"+cntr;");
+		//TextIO.putln("status.innerHTML = contentHeight+\" | \"+y+\" | cntr=\"+cntr;");	//Div TEster
 		TextIO.putln("}");// End of yHandler
 		TextIO.putln("window.onscroll = yHandler;");
 		TextIO.putln("");
@@ -1162,7 +1162,7 @@ public class allFunctions implements Serializable
 		TextIO.putln("</head>");
 		TextIO.putln("<body>");
 
-		TextIO.putln("<div id=\"status\">0 | 0</div>");
+		//TextIO.putln("<div id=\"status\">0 | 0</div>");
 		TextIO.putln("<div id=\"wrap\">");
 
 		for(z = 0; z < 25 && z < movieNames.size(); z = z + 5)
@@ -2857,7 +2857,7 @@ public class allFunctions implements Serializable
 
 		TextIO.putln("");
 		TextIO.putln("var status = document.getElementById('status');");
-		TextIO.putln("status.innerHTML = contentHeight+\" | \"+y+\" | cntr=\"+cntr;");
+		//TextIO.putln("status.innerHTML = contentHeight+\" | \"+y+\" | cntr=\"+cntr;");	//Div Tester
 		TextIO.putln("}");// End of yHandler
 		TextIO.putln("window.onscroll = yHandler;");
 		TextIO.putln("");
@@ -2920,7 +2920,7 @@ public class allFunctions implements Serializable
 		TextIO.putln("</head>");
 		TextIO.putln("<body>");
 
-		TextIO.putln("<div id=\"status\">0 | 0</div>");
+		//TextIO.putln("<div id=\"status\">0 | 0</div>");
 		TextIO.putln("<div id=\"wrap\">");
 
 		for(z = 0; z < 25 && z < authorsMovies.size(); z = z + 5)
@@ -3844,7 +3844,7 @@ public class allFunctions implements Serializable
 		TextIO.putln("</head>");
 		TextIO.putln("<body>");
 
-		TextIO.putln("<div id=\"status\">0 | 0</div>");
+		//TextIO.putln("<div id=\"status\">0 | 0</div>");
 		TextIO.putln("<div id=\"wrap\">");
 
 		for(z = 0; z < 25 && z < genreMovies.size(); z = z + 5)

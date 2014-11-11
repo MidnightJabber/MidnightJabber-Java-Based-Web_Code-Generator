@@ -25,7 +25,6 @@ if(y >= contentHeight && cntr<0)
 }
 
 var status = document.getElementById('status');
-status.innerHTML = contentHeight+" | "+y+" | cntr="+cntr;
 }
 window.onscroll = yHandler;
 
@@ -72,7 +71,6 @@ div.newData{ background:#FFF; margin:10px 0px;}
 </style>
 </head>
 <body>
-<div id="status">0 | 0</div>
 <div id="wrap">
 <!--Image Area-->
 <a href="http://midnightjabber.com/movies/Lucy-2014/"><img class = "grow glow" src="http://midnightjabber.com/wp-content/uploads/2014/08/Lucy-Poster.jpg" width=215px height=auto title="" style="margin-left: 5px;" ></a>
